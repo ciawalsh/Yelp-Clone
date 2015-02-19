@@ -2731,3 +2731,2784 @@ Processing by Devise::RegistrationsController#new as HTML
   Rendered devise/shared/_links.html.erb (1.0ms)
   Rendered devise/registrations/new.html.erb within layouts/application (4.4ms)
 Completed 200 OK in 44ms (Views: 43.6ms | ActiveRecord: 0.0ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddColumnsToUsers (20150218122926)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "users" ADD "provider" character varying[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "users" ADD "uid" character varying
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20150218122926"]]
+  [1m[35m (6.6ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.9ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'restaurants'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.6ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'reviews'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.3ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2015-02-18 14:24:24 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (6.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (30.3ms)
+Completed 200 OK in 155ms (Views: 134.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/restaurants-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-18 14:24:24 +0000
+
+
+Started GET "/assets/reviews-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-18 14:24:24 +0000
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for 127.0.0.1 at 2015-02-18 14:24:24 +0000
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-02-18 14:24:24 +0000
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for 127.0.0.1 at 2015-02-18 14:24:24 +0000
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-02-18 14:24:24 +0000
+
+
+Started GET "/assets/restaurants-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-18 14:24:24 +0000
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-18 14:24:24 +0000
+
+
+Started GET "/assets/application-322efd85de1e19784a5dc35312bc9882.js?body=1" for 127.0.0.1 at 2015-02-18 14:24:24 +0000
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2015-02-18 14:24:32 +0000
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2015-02-18 14:24:32 +0000
+
+
+Started GET "/restaurants/" for 127.0.0.1 at 2015-02-18 14:37:14 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  [1m[36mRestaurant Load (0.1ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  [1m[35mReview Exists (0.3ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 1]]
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 1]]
+  [1m[35mReview Exists (0.2ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 2]]
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 3]]
+  Rendered restaurants/index.html.haml within layouts/application (41.3ms)
+Completed 200 OK in 143ms (Views: 127.1ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/assets/reviews-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-18 14:37:14 +0000
+
+
+Started GET "/assets/restaurants-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-18 14:37:14 +0000
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-02-18 14:37:14 +0000
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-02-18 14:37:14 +0000
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for 127.0.0.1 at 2015-02-18 14:37:14 +0000
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for 127.0.0.1 at 2015-02-18 14:37:14 +0000
+
+
+Started GET "/assets/restaurants-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-18 14:37:14 +0000
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-18 14:37:14 +0000
+
+
+Started GET "/assets/application-322efd85de1e19784a5dc35312bc9882.js?body=1" for 127.0.0.1 at 2015-02-18 14:37:14 +0000
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2015-02-18 14:37:17 +0000
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2015-02-18 14:37:18 +0000
+
+
+Started GET "/restaurants" for 127.0.0.1 at 2015-02-18 14:41:56 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  [1m[36mRestaurant Load (0.2ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  [1m[35mReview Exists (0.3ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 1]]
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 1]]
+  [1m[35mReview Exists (0.2ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 2]]
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 3]]
+  Rendered restaurants/index.html.haml within layouts/application (36.2ms)
+Completed 200 OK in 132ms (Views: 117.4ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/assets/restaurants-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-18 14:41:56 +0000
+
+
+Started GET "/assets/reviews-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-18 14:41:56 +0000
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for 127.0.0.1 at 2015-02-18 14:41:56 +0000
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-02-18 14:41:56 +0000
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-02-18 14:41:56 +0000
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for 127.0.0.1 at 2015-02-18 14:41:56 +0000
+
+
+Started GET "/assets/restaurants-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-18 14:41:56 +0000
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-18 14:41:56 +0000
+
+
+Started GET "/assets/application-322efd85de1e19784a5dc35312bc9882.js?body=1" for 127.0.0.1 at 2015-02-18 14:41:56 +0000
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2015-02-18 14:41:58 +0000
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2015-02-18 14:41:58 +0000
+
+
+Started GET "/restaurants" for 127.0.0.1 at 2015-02-18 14:59:16 +0000
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  [1m[36mRestaurant Load (0.1ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  [1m[35mReview Exists (0.2ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 1]]
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 1]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 2]]
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 3]]
+  Rendered restaurants/index.html.haml within layouts/application (4.9ms)
+Completed 200 OK in 42ms (Views: 40.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/restaurants-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-18 14:59:16 +0000
+
+
+Started GET "/assets/reviews-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-18 14:59:16 +0000
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for 127.0.0.1 at 2015-02-18 14:59:16 +0000
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-02-18 14:59:16 +0000
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-02-18 14:59:16 +0000
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for 127.0.0.1 at 2015-02-18 14:59:16 +0000
+
+
+Started GET "/assets/restaurants-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-18 14:59:16 +0000
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-18 14:59:16 +0000
+
+
+Started GET "/assets/application-322efd85de1e19784a5dc35312bc9882.js?body=1" for 127.0.0.1 at 2015-02-18 14:59:16 +0000
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2015-02-18 14:59:17 +0000
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2015-02-18 14:59:17 +0000
+
+
+Started GET "/restaurants" for 127.0.0.1 at 2015-02-18 14:59:32 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  [1m[36mRestaurant Load (0.1ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  [1m[35mReview Exists (0.2ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 1]]
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 1]]
+  [1m[35mReview Exists (0.2ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 2]]
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 3]]
+  Rendered restaurants/index.html.haml within layouts/application (41.4ms)
+Completed 200 OK in 149ms (Views: 134.6ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/assets/restaurants-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-18 14:59:32 +0000
+
+
+Started GET "/assets/reviews-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-18 14:59:32 +0000
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-02-18 14:59:32 +0000
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for 127.0.0.1 at 2015-02-18 14:59:32 +0000
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-02-18 14:59:32 +0000
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for 127.0.0.1 at 2015-02-18 14:59:32 +0000
+
+
+Started GET "/assets/restaurants-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-18 14:59:32 +0000
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-18 14:59:32 +0000
+
+
+Started GET "/assets/application-322efd85de1e19784a5dc35312bc9882.js?body=1" for 127.0.0.1 at 2015-02-18 14:59:32 +0000
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2015-02-18 14:59:34 +0000
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2015-02-18 14:59:34 +0000
+
+
+Started GET "/users/auth/facebook/callback?code=AQCGco0PlIHHFtuKklOAhTLFkRSl5GrPncuRoRe97c6-OHHBPUuUYGd3vJXo0yqpsKo31TIAnKQDOpgE6hj3snwM3H0k5VDooVAapnKJYXBsAWQZj6Y9JNTU8pSc6HEeCKl65AQxzMRqYMJFf1pzh2SuZFUzEimDIr8li_rCvdzrwi15TvNU4uK4GKMwzx3AK5YZDco3g1bNOYD9JAjCXjlivJHAYCLjBBsD6oWAJbQTaxqPbCUieWQ-nDc7UmR-gMdC68c5Z0iP_6qnTbASVx6loP6AlerGDtZWB_SYkC8hUPnYi1fQg9ZlwaK5irg11zc&state=6fa97a24a31e170ea955d0f34ddb049b0f9945a5a7547704" for 127.0.0.1 at 2015-02-18 14:59:53 +0000
+
+SyntaxError (/Users/Charles-Walsh/Desktop/Coding/Projects/Yelp-Clone-Rails/app/controllers/users/omniauth_callbacks_controller.rb:7: syntax error, unexpected tSYMBEG, expecting '('
+      sign_in_and_redirect @user. :event => :authentication
+                                   ^):
+  app/controllers/users/omniauth_callbacks_controller.rb:7: syntax error, unexpected tSYMBEG, expecting '('
+
+
+  Rendered /opt/rubies/2.1.3/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (3.2ms)
+  Rendered /opt/rubies/2.1.3/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /opt/rubies/2.1.3/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /opt/rubies/2.1.3/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.8ms)
+  Rendered /opt/rubies/2.1.3/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (20.9ms)
+
+
+Started GET "/users/auth/facebook/callback?code=AQCGco0PlIHHFtuKklOAhTLFkRSl5GrPncuRoRe97c6-OHHBPUuUYGd3vJXo0yqpsKo31TIAnKQDOpgE6hj3snwM3H0k5VDooVAapnKJYXBsAWQZj6Y9JNTU8pSc6HEeCKl65AQxzMRqYMJFf1pzh2SuZFUzEimDIr8li_rCvdzrwi15TvNU4uK4GKMwzx3AK5YZDco3g1bNOYD9JAjCXjlivJHAYCLjBBsD6oWAJbQTaxqPbCUieWQ-nDc7UmR-gMdC68c5Z0iP_6qnTbASVx6loP6AlerGDtZWB_SYkC8hUPnYi1fQg9ZlwaK5irg11zc&state=6fa97a24a31e170ea955d0f34ddb049b0f9945a5a7547704" for 127.0.0.1 at 2015-02-18 15:00:50 +0000
+Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"AQCGco0PlIHHFtuKklOAhTLFkRSl5GrPncuRoRe97c6-OHHBPUuUYGd3vJXo0yqpsKo31TIAnKQDOpgE6hj3snwM3H0k5VDooVAapnKJYXBsAWQZj6Y9JNTU8pSc6HEeCKl65AQxzMRqYMJFf1pzh2SuZFUzEimDIr8li_rCvdzrwi15TvNU4uK4GKMwzx3AK5YZDco3g1bNOYD9JAjCXjlivJHAYCLjBBsD6oWAJbQTaxqPbCUieWQ-nDc7UmR-gMdC68c5Z0iP_6qnTbASVx6loP6AlerGDtZWB_SYkC8hUPnYi1fQg9ZlwaK5irg11zc", "state"=>"6fa97a24a31e170ea955d0f34ddb049b0f9945a5a7547704"}
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 9ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-02-18 15:00:50 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (9.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (30.6ms)
+Completed 200 OK in 96ms (Views: 86.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/restaurants-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-18 15:00:50 +0000
+
+
+Started GET "/assets/reviews-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-18 15:00:50 +0000
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-02-18 15:00:50 +0000
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for 127.0.0.1 at 2015-02-18 15:00:50 +0000
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-02-18 15:00:50 +0000
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for 127.0.0.1 at 2015-02-18 15:00:50 +0000
+
+
+Started GET "/assets/restaurants-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-18 15:00:50 +0000
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-18 15:00:50 +0000
+
+
+Started GET "/assets/application-322efd85de1e19784a5dc35312bc9882.js?body=1" for 127.0.0.1 at 2015-02-18 15:00:50 +0000
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2015-02-18 15:00:54 +0000
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2015-02-18 15:00:54 +0000
+
+
+Started GET "/users/auth/facebook/callback?code=AQDhr8CvJX9LfZcA92iUuQ2AhKteQzjj2_32Bv30fhWKNZE06TanjdayE_3jdXHS6imandAxG_AbRBHvT3O5se8DF-8g0iDaZKozPvQcc-7kJr3bW_FixhGcydRYEVPucbjOnbAHX6lI8-hTzXIWxIm3MT8LpqvZZI2oQQ0qjE6RINK0VJOkafPfiyFtVpN8nhkQXtKJEQrmXzCDQ8QqxddGqm2lLU8oJK7pd4Y8wW4WmN8-qrSBNR5nCXLqzB0iPJuZS7UkNogh2YpZEOWIlCv-aggOFW_xEIo_OZ87Tzcen5lDtso-TzMc1xl87ZHAAUU&state=bf8449ea8d56654165fc73fa7c228955b53cd81ebb6984d1" for 127.0.0.1 at 2015-02-18 15:00:54 +0000
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQDhr8CvJX9LfZcA92iUuQ2AhKteQzjj2_32Bv30fhWKNZE06TanjdayE_3jdXHS6imandAxG_AbRBHvT3O5se8DF-8g0iDaZKozPvQcc-7kJr3bW_FixhGcydRYEVPucbjOnbAHX6lI8-hTzXIWxIm3MT8LpqvZZI2oQQ0qjE6RINK0VJOkafPfiyFtVpN8nhkQXtKJEQrmXzCDQ8QqxddGqm2lLU8oJK7pd4Y8wW4WmN8-qrSBNR5nCXLqzB0iPJuZS7UkNogh2YpZEOWIlCv-aggOFW_xEIo_OZ87Tzcen5lDtso-TzMc1xl87ZHAAUU", "state"=>"bf8449ea8d56654165fc73fa7c228955b53cd81ebb6984d1"}
+  [1m[35mUser Load (18.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2  ORDER BY "users"."id" ASC LIMIT 1  [["provider", "facebook"], ["uid", "10153146434361789"]]
+Completed 500 Internal Server Error in 98ms
+
+NoMethodError (undefined method `name=' for #<User:0x007fe8fb30b8f8>):
+  app/models/user.rb:12:in `block in from_omniauth'
+  app/models/user.rb:9:in `from_omniauth'
+  app/controllers/users/omniauth_callbacks_controller.rb:4:in `facebook'
+
+
+  Rendered /opt/rubies/2.1.3/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (3.8ms)
+  Rendered /opt/rubies/2.1.3/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /opt/rubies/2.1.3/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /opt/rubies/2.1.3/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.7ms)
+  Rendered /opt/rubies/2.1.3/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (17.7ms)
+
+
+Started GET "/restaurants" for 127.0.0.1 at 2015-02-18 15:01:12 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  [1m[36mRestaurant Load (0.1ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  [1m[35mReview Exists (0.3ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 1]]
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 1]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 2]]
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 3]]
+  Rendered restaurants/index.html.haml within layouts/application (34.5ms)
+Completed 200 OK in 133ms (Views: 118.1ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/assets/reviews-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-18 15:01:12 +0000
+
+
+Started GET "/assets/restaurants-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-18 15:01:12 +0000
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for 127.0.0.1 at 2015-02-18 15:01:13 +0000
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-02-18 15:01:13 +0000
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for 127.0.0.1 at 2015-02-18 15:01:13 +0000
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-02-18 15:01:13 +0000
+
+
+Started GET "/assets/restaurants-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-18 15:01:13 +0000
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-18 15:01:13 +0000
+
+
+Started GET "/assets/application-322efd85de1e19784a5dc35312bc9882.js?body=1" for 127.0.0.1 at 2015-02-18 15:01:13 +0000
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2015-02-18 15:01:14 +0000
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2015-02-18 15:01:19 +0000
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2015-02-18 15:01:19 +0000
+
+
+Started GET "/users/auth/facebook/callback?code=AQDj42S140bd0Erp8ZYphDoL-6TlM0DTqSizGw_8iwGIC84F_O8Kt8cQwdeLLN9faRUpxwlcz3IuROgb-l79Pci3WZWEBAXYj-bNJdZAUbw-QP69TF8IW5EahrR_9qCxw2ZS5uUGvf9n225jY0ckFbLL0wtjUzwS_AuNiED9XQPPPhSaphFz7RRJzAIkFH--zq2VW_d6AMg8ynUl-_VU8ZNljiHqK9tNeMzjBunL2DMJeF-CqnYiu8vhdCK8jVuqTuYtFKgYuWtmqdXmQlWgJRE3piI6w6Ph3VtKUftHozkq83ti0rZSKlhJw4ZB_e-t7zQ&state=cd646ea888c5d3b467222b9370b81bc4a3e5189df3b3bf9e" for 127.0.0.1 at 2015-02-18 15:01:19 +0000
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQDj42S140bd0Erp8ZYphDoL-6TlM0DTqSizGw_8iwGIC84F_O8Kt8cQwdeLLN9faRUpxwlcz3IuROgb-l79Pci3WZWEBAXYj-bNJdZAUbw-QP69TF8IW5EahrR_9qCxw2ZS5uUGvf9n225jY0ckFbLL0wtjUzwS_AuNiED9XQPPPhSaphFz7RRJzAIkFH--zq2VW_d6AMg8ynUl-_VU8ZNljiHqK9tNeMzjBunL2DMJeF-CqnYiu8vhdCK8jVuqTuYtFKgYuWtmqdXmQlWgJRE3piI6w6Ph3VtKUftHozkq83ti0rZSKlhJw4ZB_e-t7zQ", "state"=>"cd646ea888c5d3b467222b9370b81bc4a3e5189df3b3bf9e"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2  ORDER BY "users"."id" ASC LIMIT 1  [["provider", "facebook"], ["uid", "10153146434361789"]]
+Completed 500 Internal Server Error in 72ms
+
+NoMethodError (undefined method `name=' for #<User:0x007f9d6d809cd0>):
+  app/models/user.rb:12:in `block in from_omniauth'
+  app/models/user.rb:9:in `from_omniauth'
+  app/controllers/users/omniauth_callbacks_controller.rb:4:in `facebook'
+
+
+  Rendered /opt/rubies/2.1.3/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (4.9ms)
+  Rendered /opt/rubies/2.1.3/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /opt/rubies/2.1.3/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /opt/rubies/2.1.3/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.7ms)
+  Rendered /opt/rubies/2.1.3/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (21.1ms)
+
+
+Started GET "/restaurants" for 127.0.0.1 at 2015-02-18 15:04:39 +0000
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[35mRestaurant Load (0.1ms)[0m  SELECT "restaurants".* FROM "restaurants"
+  [1m[36mReview Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 1]]
+  [1m[35mReview Load (0.1ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1  [["restaurant_id", 1]]
+  [1m[36mReview Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 2]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 3]]
+  Rendered restaurants/index.html.haml within layouts/application (15.6ms)
+Completed 200 OK in 87ms (Views: 81.5ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/assets/restaurants-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-18 15:04:39 +0000
+
+
+Started GET "/assets/reviews-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-18 15:04:39 +0000
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-02-18 15:04:39 +0000
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for 127.0.0.1 at 2015-02-18 15:04:39 +0000
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for 127.0.0.1 at 2015-02-18 15:04:39 +0000
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-02-18 15:04:39 +0000
+
+
+Started GET "/assets/restaurants-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-18 15:04:39 +0000
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-18 15:04:39 +0000
+
+
+Started GET "/assets/application-322efd85de1e19784a5dc35312bc9882.js?body=1" for 127.0.0.1 at 2015-02-18 15:04:39 +0000
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-02-18 15:04:44 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (9.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (27.7ms)
+Completed 200 OK in 80ms (Views: 70.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2015-02-18 15:04:46 +0000
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (3.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 55ms (Views: 54.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-02-18 15:04:49 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (2.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 55ms (Views: 54.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2015-02-18 15:04:54 +0000
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2015-02-18 15:04:54 +0000
+
+
+Started GET "/users/auth/facebook/callback?code=AQCxKGAC4t3QnRZSRSNfc_zM0bqC4twz7MUrZJZHE5e3kCdFjvshllTG09ARP0QPNTUcxrZEJVC_5grTtsi9V4yLQBI6YxONcUqD6ScdVMFnF4byEj2vcpVzsJWtrJvc2DCEawYkm4tMEHcJDIFPiGivLv5WnQAj2k4Kn0tq_i0r_vhSWE6x76GJymTQc9A5PYeryxEeYP-VTSPzmJI4PIRXQM_ec9ClUKNvNrDs4WLJdz78pnaOoCP_YHMmYbmq2VqH9ExvYY-7ts5IQX-xEtOUr2UYVXAoaU3CnA00JMax8IXCV2JYOzHhmjRe4f8VR8Y&state=96c9b115c16c908543f913841066e3a7e3218283df42541d" for 127.0.0.1 at 2015-02-18 15:04:54 +0000
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQCxKGAC4t3QnRZSRSNfc_zM0bqC4twz7MUrZJZHE5e3kCdFjvshllTG09ARP0QPNTUcxrZEJVC_5grTtsi9V4yLQBI6YxONcUqD6ScdVMFnF4byEj2vcpVzsJWtrJvc2DCEawYkm4tMEHcJDIFPiGivLv5WnQAj2k4Kn0tq_i0r_vhSWE6x76GJymTQc9A5PYeryxEeYP-VTSPzmJI4PIRXQM_ec9ClUKNvNrDs4WLJdz78pnaOoCP_YHMmYbmq2VqH9ExvYY-7ts5IQX-xEtOUr2UYVXAoaU3CnA00JMax8IXCV2JYOzHhmjRe4f8VR8Y", "state"=>"96c9b115c16c908543f913841066e3a7e3218283df42541d"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2  ORDER BY "users"."id" ASC LIMIT 1[0m  [["provider", "facebook"], ["uid", "10153146434361789"]]
+Completed 500 Internal Server Error in 60ms
+
+NoMethodError (undefined method `name=' for #<User:0x007f9d6b90c9b8>):
+  app/models/user.rb:12:in `block in from_omniauth'
+  app/models/user.rb:9:in `from_omniauth'
+  app/controllers/users/omniauth_callbacks_controller.rb:4:in `facebook'
+
+
+  Rendered /opt/rubies/2.1.3/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (4.9ms)
+  Rendered /opt/rubies/2.1.3/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /opt/rubies/2.1.3/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /opt/rubies/2.1.3/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.6ms)
+  Rendered /opt/rubies/2.1.3/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (19.9ms)
+
+
+Started GET "/restaurants" for 127.0.0.1 at 2015-02-18 15:13:08 +0000
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  [1m[36mRestaurant Load (0.1ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 1]]
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 1]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 2]]
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 3]]
+  Rendered restaurants/index.html.haml within layouts/application (5.0ms)
+Completed 200 OK in 46ms (Views: 45.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/restaurants-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-18 15:13:08 +0000
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-02-18 15:13:08 +0000
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for 127.0.0.1 at 2015-02-18 15:13:08 +0000
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-02-18 15:13:08 +0000
+
+
+Started GET "/assets/reviews-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-18 15:13:08 +0000
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for 127.0.0.1 at 2015-02-18 15:13:08 +0000
+
+
+Started GET "/assets/restaurants-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-18 15:13:08 +0000
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-18 15:13:08 +0000
+
+
+Started GET "/assets/application-322efd85de1e19784a5dc35312bc9882.js?body=1" for 127.0.0.1 at 2015-02-18 15:13:08 +0000
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2015-02-18 15:13:12 +0000
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2015-02-18 15:13:12 +0000
+
+
+Started GET "/users/auth/facebook/callback?code=AQC0JXwpgwrdLKkqDM4Sq76_QkQFMqK0ApKy12w2nNwdmlO9HPCUJ7XoBe6TKQldDqbE_9SzEQzHoHQY2j20a8EEDE6glh--LThuwN-157aQxNklAfyyc0psBMnUZd6L2HvRWJJk48hclC6ecb8MORvCFjB5MGsn9kPXtBnFyb792IUPwgXg3WkVcXDS7sZCjKkTMmykXDiI0Ux0rmR5xfcxDkw8jhxdkrCVBRfI7doykhaWUmqJBktByv5h1NxEud8m1h1KcRuffvNqMgXMmxiF6NiSqkwYSsZ4PSzqJS4nFDCt6oj_82Z9i2B1rmGOPLo&state=06945dbade719f779c672dae41e48ab63572d590e9decc49" for 127.0.0.1 at 2015-02-18 15:13:13 +0000
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQC0JXwpgwrdLKkqDM4Sq76_QkQFMqK0ApKy12w2nNwdmlO9HPCUJ7XoBe6TKQldDqbE_9SzEQzHoHQY2j20a8EEDE6glh--LThuwN-157aQxNklAfyyc0psBMnUZd6L2HvRWJJk48hclC6ecb8MORvCFjB5MGsn9kPXtBnFyb792IUPwgXg3WkVcXDS7sZCjKkTMmykXDiI0Ux0rmR5xfcxDkw8jhxdkrCVBRfI7doykhaWUmqJBktByv5h1NxEud8m1h1KcRuffvNqMgXMmxiF6NiSqkwYSsZ4PSzqJS4nFDCt6oj_82Z9i2B1rmGOPLo", "state"=>"06945dbade719f779c672dae41e48ab63572d590e9decc49"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2  ORDER BY "users"."id" ASC LIMIT 1  [["provider", "facebook"], ["uid", "10153146434361789"]]
+Completed 500 Internal Server Error in 65ms
+
+NoMethodError (undefined method `name=' for #<User:0x007f9d63dac070>):
+  app/models/user.rb:12:in `block in from_omniauth'
+  app/models/user.rb:9:in `from_omniauth'
+  app/controllers/users/omniauth_callbacks_controller.rb:4:in `facebook'
+
+
+  Rendered /opt/rubies/2.1.3/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (4.0ms)
+  Rendered /opt/rubies/2.1.3/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /opt/rubies/2.1.3/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.5ms)
+  Rendered /opt/rubies/2.1.3/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.5ms)
+  Rendered /opt/rubies/2.1.3/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (17.5ms)
+
+
+Started GET "/restaurants" for 127.0.0.1 at 2015-02-18 15:16:23 +0000
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[35mRestaurant Load (0.1ms)[0m  SELECT "restaurants".* FROM "restaurants"
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 1]]
+  [1m[35mReview Load (0.1ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1  [["restaurant_id", 1]]
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 2]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 3]]
+  Rendered restaurants/index.html.haml within layouts/application (15.3ms)
+Completed 200 OK in 56ms (Views: 51.3ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/assets/restaurants-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-18 15:16:23 +0000
+
+
+Started GET "/assets/reviews-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-18 15:16:23 +0000
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-02-18 15:16:23 +0000
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for 127.0.0.1 at 2015-02-18 15:16:23 +0000
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-02-18 15:16:23 +0000
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for 127.0.0.1 at 2015-02-18 15:16:23 +0000
+
+
+Started GET "/assets/restaurants-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-18 15:16:23 +0000
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-18 15:16:23 +0000
+
+
+Started GET "/assets/application-322efd85de1e19784a5dc35312bc9882.js?body=1" for 127.0.0.1 at 2015-02-18 15:16:23 +0000
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2015-02-18 15:16:26 +0000
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2015-02-18 15:16:26 +0000
+
+
+Started GET "/users/auth/facebook/callback?code=AQCD2iYe88IxsV-AXrqLXFUuep5NC4JrCsz7RDSHoAx1eDC7ldLl6QKQiP1dLiU00wnU1_KjTsyecdOXbzflYyCJJcKLsTdsyS3and4QPI73SzMAj6F7qCtMpAfYU46u2QpXBKH2bsH6lav__7VVnvBgxXeM2IgO8MxdEHSgQYCbgXnOy_JyeJGDI0JiRta0DrKsjIYjfxjbJh8OiA4Se3IsKxRItYRZQEIubLfGFpoxsBS1DmS5FBDi1ezOd4igJG6zNd0A05ZZSlKo8tM6t3ZvHX6Vp7lq81SKnwmoEvZM1zxwMIrK_RY9S9pw7q-ag4w&state=6e7c0b8253cd84d6c6868ff5e3788aec6d88522e1e3421f9" for 127.0.0.1 at 2015-02-18 15:16:26 +0000
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQCD2iYe88IxsV-AXrqLXFUuep5NC4JrCsz7RDSHoAx1eDC7ldLl6QKQiP1dLiU00wnU1_KjTsyecdOXbzflYyCJJcKLsTdsyS3and4QPI73SzMAj6F7qCtMpAfYU46u2QpXBKH2bsH6lav__7VVnvBgxXeM2IgO8MxdEHSgQYCbgXnOy_JyeJGDI0JiRta0DrKsjIYjfxjbJh8OiA4Se3IsKxRItYRZQEIubLfGFpoxsBS1DmS5FBDi1ezOd4igJG6zNd0A05ZZSlKo8tM6t3ZvHX6Vp7lq81SKnwmoEvZM1zxwMIrK_RY9S9pw7q-ag4w", "state"=>"6e7c0b8253cd84d6c6868ff5e3788aec6d88522e1e3421f9"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2  ORDER BY "users"."id" ASC LIMIT 1[0m  [["provider", "facebook"], ["uid", "10153146434361789"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'cia.walsh@googlemail.com' LIMIT 1[0m
+  [1m[35mSQL (2.3ms)[0m  INSERT INTO "users" ("provider", "uid", "email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["provider", "facebook"], ["uid", "10153146434361789"], ["email", "cia.walsh@googlemail.com"], ["encrypted_password", "$2a$10$N28extoOVVIO50UjLLWBZumIc9MypS58E/NCyzilWTwzKBSOAFdSa"], ["created_at", "2015-02-18 15:16:26.922968"], ["updated_at", "2015-02-18 15:16:26.922968"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "last_sign_in_ip" = $3, "current_sign_in_ip" = $4, "sign_in_count" = $5, "updated_at" = $6 WHERE "users"."id" = $7[0m  [["last_sign_in_at", "2015-02-18 15:16:26.927440"], ["current_sign_in_at", "2015-02-18 15:16:26.927440"], ["last_sign_in_ip", "127.0.0.1/32"], ["current_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1], ["updated_at", "2015-02-18 15:16:26.928289"], ["id", 1]]
+  [1m[35m (0.2ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 80ms (ActiveRecord: 4.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-18 15:16:26 +0000
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /opt/rubies/2.1.3/lib/ruby/gems/2.1.0/gems/railties-4.2.0/lib/rails/templates/rails/welcome/index.html.erb (0.6ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/restaurants" for 127.0.0.1 at 2015-02-18 15:17:12 +0000
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[35mRestaurant Load (0.1ms)[0m  SELECT "restaurants".* FROM "restaurants"
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 1]]
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1  [["restaurant_id", 1]]
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 2]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 3]]
+  Rendered restaurants/index.html.haml within layouts/application (4.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 47ms (Views: 45.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/reviews-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-18 15:17:12 +0000
+
+
+Started GET "/assets/restaurants-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-18 15:17:12 +0000
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-02-18 15:17:12 +0000
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-02-18 15:17:12 +0000
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for 127.0.0.1 at 2015-02-18 15:17:12 +0000
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for 127.0.0.1 at 2015-02-18 15:17:12 +0000
+
+
+Started GET "/assets/restaurants-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-18 15:17:12 +0000
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-18 15:17:12 +0000
+
+
+Started GET "/assets/application-322efd85de1e19784a5dc35312bc9882.js?body=1" for 127.0.0.1 at 2015-02-18 15:17:13 +0000
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2015-02-18 15:17:15 +0000
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"3cZ14znbdij5q7zNFoYzQSDnGTKrF/VrvNG/+0vWCN1mwR4yN0wMIbBimxMS+ycKlNvW//1xivvz9jOinR/Lpg=="}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-18 15:17:15 +0000
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /opt/rubies/2.1.3/lib/ruby/gems/2.1.0/gems/railties-4.2.0/lib/rails/templates/rails/welcome/index.html.erb (0.0ms)
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-18 15:17:43 +0000
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /opt/rubies/2.1.3/lib/ruby/gems/2.1.0/gems/railties-4.2.0/lib/rails/templates/rails/welcome/index.html.erb (0.0ms)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/restaurants" for 127.0.0.1 at 2015-02-18 15:17:47 +0000
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[35mRestaurant Load (0.1ms)[0m  SELECT "restaurants".* FROM "restaurants"
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 1]]
+  [1m[35mReview Load (0.1ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1  [["restaurant_id", 1]]
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 2]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 3]]
+  Rendered restaurants/index.html.haml within layouts/application (4.3ms)
+Completed 200 OK in 46ms (Views: 45.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/restaurants-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-18 15:17:48 +0000
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for 127.0.0.1 at 2015-02-18 15:17:48 +0000
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-02-18 15:17:48 +0000
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-02-18 15:17:48 +0000
+
+
+Started GET "/assets/reviews-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-18 15:17:48 +0000
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for 127.0.0.1 at 2015-02-18 15:17:48 +0000
+
+
+Started GET "/assets/restaurants-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-18 15:17:48 +0000
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-18 15:17:48 +0000
+
+
+Started GET "/assets/application-322efd85de1e19784a5dc35312bc9882.js?body=1" for 127.0.0.1 at 2015-02-18 15:17:48 +0000
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2015-02-18 15:17:50 +0000
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2015-02-18 15:17:50 +0000
+
+
+Started GET "/users/auth/facebook/callback?code=AQAZt1V2AEhdj-Qn2HIV6UrNDqr0ppGljT4XJZS9e29DWLIl6ngbCReV3T-eie28IjY0YPLHuBv7naqY0IltkftyHayEc1qPRuZviZ-7OLgw6P5ITasSdghCAdVYpthLfY1_KDFLtO6bonrOzRZuqtTE037dyL41nj0noVf7NdCPXD2hSXM3c7vJeysOSfjQ5qF02hZQUGPoKs51sPKk09x5FErN27qV12TRG8KYK4Sho_JADiKR6hrQYkPDIIOFXnac7kuzi8O-phMWcNBWqonbavVzL8J3JqTgh4u9Sv7A0b64y6R1D47uIDU9_ln7_jE&state=2d57fe84c0c355a210b22fbdb4638afd68fa913d96d73309" for 127.0.0.1 at 2015-02-18 15:17:50 +0000
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQAZt1V2AEhdj-Qn2HIV6UrNDqr0ppGljT4XJZS9e29DWLIl6ngbCReV3T-eie28IjY0YPLHuBv7naqY0IltkftyHayEc1qPRuZviZ-7OLgw6P5ITasSdghCAdVYpthLfY1_KDFLtO6bonrOzRZuqtTE037dyL41nj0noVf7NdCPXD2hSXM3c7vJeysOSfjQ5qF02hZQUGPoKs51sPKk09x5FErN27qV12TRG8KYK4Sho_JADiKR6hrQYkPDIIOFXnac7kuzi8O-phMWcNBWqonbavVzL8J3JqTgh4u9Sv7A0b64y6R1D47uIDU9_ln7_jE", "state"=>"2d57fe84c0c355a210b22fbdb4638afd68fa913d96d73309"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2  ORDER BY "users"."id" ASC LIMIT 1[0m  [["provider", "facebook"], ["uid", "10153146434361789"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = $1, "sign_in_count" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["current_sign_in_at", "2015-02-18 15:17:50.641968"], ["sign_in_count", 2], ["updated_at", "2015-02-18 15:17:50.643198"], ["id", 1]]
+  [1m[35m (1.0ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-18 15:17:50 +0000
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /opt/rubies/2.1.3/lib/ruby/gems/2.1.0/gems/railties-4.2.0/lib/rails/templates/rails/welcome/index.html.erb (0.0ms)
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2015-02-18 15:19:24 +0000
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2015-02-18 15:19:24 +0000
+
+
+Started GET "/users/auth/facebook/callback?code=AQCcx60To3YLjbtCHwCOny10NiNtfz-5stbd8gMEqzm_Fx1PaV2wHEoi5sTm6ONuTQ-vOVHP2kX2GaIwY-iCQ6lElz3R6Q3IJJNSuAuEBJfq6mSz18OR0TiD3uzfTNu9mU8LsKjhTec-r_OE3TuSbJv_hQxHHtKYyB1qylZBqmbm-yDGj5V_Gf6ctKkfEdk7MNiT2BJYZA6OUsIHJSnI0lOSxaAfiD98vmIyi4frQreD8AIh885RtI25ebc2lN5G8xLB8J_Wl11rYt0IYWiZeRww9_6YxwSN981yGDNcsQhYnrMaupVUzuAWG35hpZuc_cc&state=167633292f3a36552e7b032675f720bcd5145a5cd411cd9e" for 127.0.0.1 at 2015-02-18 15:19:24 +0000
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQCcx60To3YLjbtCHwCOny10NiNtfz-5stbd8gMEqzm_Fx1PaV2wHEoi5sTm6ONuTQ-vOVHP2kX2GaIwY-iCQ6lElz3R6Q3IJJNSuAuEBJfq6mSz18OR0TiD3uzfTNu9mU8LsKjhTec-r_OE3TuSbJv_hQxHHtKYyB1qylZBqmbm-yDGj5V_Gf6ctKkfEdk7MNiT2BJYZA6OUsIHJSnI0lOSxaAfiD98vmIyi4frQreD8AIh885RtI25ebc2lN5G8xLB8J_Wl11rYt0IYWiZeRww9_6YxwSN981yGDNcsQhYnrMaupVUzuAWG35hpZuc_cc", "state"=>"167633292f3a36552e7b032675f720bcd5145a5cd411cd9e"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2  ORDER BY "users"."id" ASC LIMIT 1[0m  [["provider", "facebook"], ["uid", "10153146434361789"]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 11ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-18 15:19:24 +0000
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[35mRestaurant Load (0.1ms)[0m  SELECT "restaurants".* FROM "restaurants"
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 1]]
+  [1m[35mReview Load (0.1ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1  [["restaurant_id", 1]]
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 2]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 3]]
+  Rendered restaurants/index.html.haml within layouts/application (15.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 69ms (Views: 64.3ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/assets/reviews-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-18 15:19:25 +0000
+
+
+Started GET "/assets/restaurants-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-18 15:19:25 +0000
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-02-18 15:19:25 +0000
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for 127.0.0.1 at 2015-02-18 15:19:25 +0000
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-02-18 15:19:25 +0000
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for 127.0.0.1 at 2015-02-18 15:19:25 +0000
+
+
+Started GET "/assets/restaurants-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-18 15:19:25 +0000
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-18 15:19:25 +0000
+
+
+Started GET "/assets/application-322efd85de1e19784a5dc35312bc9882.js?body=1" for 127.0.0.1 at 2015-02-18 15:19:25 +0000
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2015-02-18 15:19:49 +0000
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"9FSBXDbqVo4xtOeE9SAkyynemiKhY5LB2vfEMEI2lBnGm2tNyO0W8emt9U8D/EstwqCnAD5VMgaWZEOG5yHEYQ=="}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-18 15:19:49 +0000
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[35mRestaurant Load (0.1ms)[0m  SELECT "restaurants".* FROM "restaurants"
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 1]]
+  [1m[35mReview Load (0.1ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1  [["restaurant_id", 1]]
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 2]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 3]]
+  Rendered restaurants/index.html.haml within layouts/application (4.4ms)
+Completed 200 OK in 54ms (Views: 53.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/restaurants-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-18 15:19:49 +0000
+
+
+Started GET "/assets/reviews-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-18 15:19:49 +0000
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for 127.0.0.1 at 2015-02-18 15:19:49 +0000
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-02-18 15:19:49 +0000
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-02-18 15:19:49 +0000
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for 127.0.0.1 at 2015-02-18 15:19:49 +0000
+
+
+Started GET "/assets/restaurants-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-18 15:19:49 +0000
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-18 15:19:49 +0000
+
+
+Started GET "/assets/application-322efd85de1e19784a5dc35312bc9882.js?body=1" for 127.0.0.1 at 2015-02-18 15:19:49 +0000
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2015-02-18 15:19:52 +0000
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2015-02-18 15:19:52 +0000
+
+
+Started GET "/users/auth/facebook/callback?code=AQC7RFKfLYgKpKFq7yQToIjluk4IVFLaOSifePpwBTQSTMTSpzJD8xVkjP4o6Iv53f-f57kWVGurt3g7h_l2Rj8EcN9nLyGhoOBNMS6XaCNW9S-dhpiqgiQZJtlm1Agd-zaFNQ7y8BBWQ4bcn_yfwBtU9uEsoMX9QShBXyONKQFcwx2nO3IU72D_PZ5wpqFKvagovNnjZBz3-sYTryV-pWjLTyVSDj0kaMNSearwX3SBsYHUVrN0KzNleYaZf-lyJN5I2zfz-gaHdXnCMKJm4WEMJ9Yg6xbL8lrqcn42beO7TyPjXEeLqoYUQS_sYlrokJ8&state=b95b26afb48a54d4fcc7120dff415370fba274f35632b5a9" for 127.0.0.1 at 2015-02-18 15:19:52 +0000
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQC7RFKfLYgKpKFq7yQToIjluk4IVFLaOSifePpwBTQSTMTSpzJD8xVkjP4o6Iv53f-f57kWVGurt3g7h_l2Rj8EcN9nLyGhoOBNMS6XaCNW9S-dhpiqgiQZJtlm1Agd-zaFNQ7y8BBWQ4bcn_yfwBtU9uEsoMX9QShBXyONKQFcwx2nO3IU72D_PZ5wpqFKvagovNnjZBz3-sYTryV-pWjLTyVSDj0kaMNSearwX3SBsYHUVrN0KzNleYaZf-lyJN5I2zfz-gaHdXnCMKJm4WEMJ9Yg6xbL8lrqcn42beO7TyPjXEeLqoYUQS_sYlrokJ8", "state"=>"b95b26afb48a54d4fcc7120dff415370fba274f35632b5a9"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2  ORDER BY "users"."id" ASC LIMIT 1[0m  [["provider", "facebook"], ["uid", "10153146434361789"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["last_sign_in_at", "2015-02-18 15:17:50.641968"], ["current_sign_in_at", "2015-02-18 15:19:53.087358"], ["sign_in_count", 3], ["updated_at", "2015-02-18 15:19:53.088564"], ["id", 1]]
+  [1m[35m (1.0ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-18 15:19:53 +0000
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[35mRestaurant Load (0.1ms)[0m  SELECT "restaurants".* FROM "restaurants"
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 1]]
+  [1m[35mReview Load (0.1ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1  [["restaurant_id", 1]]
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 2]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 3]]
+  Rendered restaurants/index.html.haml within layouts/application (4.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 46ms (Views: 44.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/restaurants-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-18 15:19:53 +0000
+
+
+Started GET "/assets/reviews-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-18 15:19:53 +0000
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-02-18 15:19:53 +0000
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for 127.0.0.1 at 2015-02-18 15:19:53 +0000
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-02-18 15:19:53 +0000
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for 127.0.0.1 at 2015-02-18 15:19:53 +0000
+
+
+Started GET "/assets/restaurants-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-18 15:19:53 +0000
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-18 15:19:53 +0000
+
+
+Started GET "/assets/application-322efd85de1e19784a5dc35312bc9882.js?body=1" for 127.0.0.1 at 2015-02-18 15:19:53 +0000
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2015-02-18 15:19:54 +0000
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"tej7gt3XtYWcE2vsIdmwcqmbURym4wVBZNTEH89bsoVNTIL5FrrbS3OA+zGS53E9kDJeMPV9/cC+zzCUZDzP3g=="}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-18 15:19:54 +0000
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[35mRestaurant Load (0.1ms)[0m  SELECT "restaurants".* FROM "restaurants"
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 1]]
+  [1m[35mReview Load (0.1ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1  [["restaurant_id", 1]]
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 2]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 3]]
+  Rendered restaurants/index.html.haml within layouts/application (5.3ms)
+Completed 200 OK in 46ms (Views: 44.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/restaurants-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-18 15:19:54 +0000
+
+
+Started GET "/assets/reviews-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-18 15:19:54 +0000
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-02-18 15:19:54 +0000
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for 127.0.0.1 at 2015-02-18 15:19:54 +0000
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-02-18 15:19:54 +0000
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for 127.0.0.1 at 2015-02-18 15:19:54 +0000
+
+
+Started GET "/assets/restaurants-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-18 15:19:54 +0000
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-18 15:19:54 +0000
+
+
+Started GET "/assets/application-322efd85de1e19784a5dc35312bc9882.js?body=1" for 127.0.0.1 at 2015-02-18 15:19:54 +0000
+
+
+Started GET "/restaurants" for 127.0.0.1 at 2015-02-18 15:21:46 +0000
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[35mRestaurant Load (0.1ms)[0m  SELECT "restaurants".* FROM "restaurants"
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 1]]
+  [1m[35mReview Load (0.1ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1  [["restaurant_id", 1]]
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 2]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 3]]
+  Rendered restaurants/index.html.haml within layouts/application (4.6ms)
+Completed 200 OK in 54ms (Views: 52.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/restaurants-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-18 15:21:46 +0000
+
+
+Started GET "/assets/reviews-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-18 15:21:46 +0000
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for 127.0.0.1 at 2015-02-18 15:21:46 +0000
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-02-18 15:21:46 +0000
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-02-18 15:21:46 +0000
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for 127.0.0.1 at 2015-02-18 15:21:46 +0000
+
+
+Started GET "/assets/restaurants-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-18 15:21:46 +0000
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-18 15:21:46 +0000
+
+
+Started GET "/assets/application-322efd85de1e19784a5dc35312bc9882.js?body=1" for 127.0.0.1 at 2015-02-18 15:21:46 +0000
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2015-02-18 15:21:48 +0000
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2015-02-18 15:21:49 +0000
+
+
+Started GET "/users/auth/facebook/callback?code=AQB0Ykd2bnv06bP9ab-S-4BiC9UkzCUUl1_j9crn6g6C8SGXPF6ZhpiBMFr6r00YWrd0ZcGxjAnbq1Y41upjOCLwzwD6Y7ezRSyJhneZD3Us5GFSqqBblLzErytXOYoOEinJpGykXTvxEMYDzaRquIJRerTSXZmxElx8yeipntkwnvSmGiJKCIKA8dv5mR-UaI5X7y_g_lg_DwIdvWfhm4pJ1uoN9dQlMI__dQjsQj1Quc_tkyuUpcbIPABsfOniQhSkplW4DuLQkCvdOgXBDtWCQMKJd9I-Pu0JKlatiGv5f9CbLL1XftBwS023s6bfG_U&state=38a4825ef488f82f7b5447542783a574757b1e1b031a361c" for 127.0.0.1 at 2015-02-18 15:21:49 +0000
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQB0Ykd2bnv06bP9ab-S-4BiC9UkzCUUl1_j9crn6g6C8SGXPF6ZhpiBMFr6r00YWrd0ZcGxjAnbq1Y41upjOCLwzwD6Y7ezRSyJhneZD3Us5GFSqqBblLzErytXOYoOEinJpGykXTvxEMYDzaRquIJRerTSXZmxElx8yeipntkwnvSmGiJKCIKA8dv5mR-UaI5X7y_g_lg_DwIdvWfhm4pJ1uoN9dQlMI__dQjsQj1Quc_tkyuUpcbIPABsfOniQhSkplW4DuLQkCvdOgXBDtWCQMKJd9I-Pu0JKlatiGv5f9CbLL1XftBwS023s6bfG_U", "state"=>"38a4825ef488f82f7b5447542783a574757b1e1b031a361c"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2  ORDER BY "users"."id" ASC LIMIT 1[0m  [["provider", "facebook"], ["uid", "10153146434361789"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["last_sign_in_at", "2015-02-18 15:19:53.087358"], ["current_sign_in_at", "2015-02-18 15:21:49.474850"], ["sign_in_count", 4], ["updated_at", "2015-02-18 15:21:49.476138"], ["id", 1]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-18 15:21:49 +0000
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[35mRestaurant Load (0.1ms)[0m  SELECT "restaurants".* FROM "restaurants"
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 1]]
+  [1m[35mReview Load (0.1ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1  [["restaurant_id", 1]]
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 2]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 3]]
+  Rendered restaurants/index.html.haml within layouts/application (4.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 50ms (Views: 48.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/restaurants-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-18 15:21:49 +0000
+
+
+Started GET "/assets/reviews-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-18 15:21:49 +0000
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for 127.0.0.1 at 2015-02-18 15:21:49 +0000
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-02-18 15:21:49 +0000
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-02-18 15:21:49 +0000
+
+
+Started GET "/assets/restaurants-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-18 15:21:49 +0000
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for 127.0.0.1 at 2015-02-18 15:21:49 +0000
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-18 15:21:49 +0000
+
+
+Started GET "/assets/application-322efd85de1e19784a5dc35312bc9882.js?body=1" for 127.0.0.1 at 2015-02-18 15:21:49 +0000
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2015-02-18 15:21:50 +0000
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"xec6avYTew2jSi0Z69jpfz2jqMeDvrDrDhOuvdGpQYw98+io/r8/ZZJcJr2e9vcMZysl8RZ2NGcsodZOZZjQnQ=="}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-18 15:21:50 +0000
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[35mRestaurant Load (0.1ms)[0m  SELECT "restaurants".* FROM "restaurants"
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 1]]
+  [1m[35mReview Load (0.1ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1  [["restaurant_id", 1]]
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 2]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 3]]
+  Rendered restaurants/index.html.haml within layouts/application (4.8ms)
+Completed 200 OK in 45ms (Views: 43.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/restaurants-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-18 15:21:50 +0000
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-02-18 15:21:50 +0000
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-02-18 15:21:50 +0000
+
+
+Started GET "/assets/reviews-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-18 15:21:50 +0000
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for 127.0.0.1 at 2015-02-18 15:21:50 +0000
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for 127.0.0.1 at 2015-02-18 15:21:50 +0000
+
+
+Started GET "/assets/restaurants-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-18 15:21:50 +0000
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-18 15:21:50 +0000
+
+
+Started GET "/assets/application-322efd85de1e19784a5dc35312bc9882.js?body=1" for 127.0.0.1 at 2015-02-18 15:21:50 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-18 16:50:01 +0000
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[35mRestaurant Load (0.2ms)[0m  SELECT "restaurants".* FROM "restaurants"
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 1]]
+  [1m[35mReview Load (0.1ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1  [["restaurant_id", 1]]
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 2]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 3]]
+  Rendered restaurants/index.html.haml within layouts/application (5.3ms)
+Completed 200 OK in 62ms (Views: 61.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/restaurants-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-18 16:50:01 +0000
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-02-18 16:50:01 +0000
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-02-18 16:50:01 +0000
+
+
+Started GET "/assets/reviews-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-18 16:50:01 +0000
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for 127.0.0.1 at 2015-02-18 16:50:01 +0000
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for 127.0.0.1 at 2015-02-18 16:50:01 +0000
+
+
+Started GET "/assets/restaurants-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-18 16:50:01 +0000
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-18 16:50:01 +0000
+
+
+Started GET "/assets/application-322efd85de1e19784a5dc35312bc9882.js?body=1" for 127.0.0.1 at 2015-02-18 16:50:01 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-18 18:09:10 +0000
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[35mRestaurant Load (0.2ms)[0m  SELECT "restaurants".* FROM "restaurants"
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 1]]
+  [1m[35mReview Load (0.1ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1  [["restaurant_id", 1]]
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 2]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 3]]
+  Rendered restaurants/index.html.haml within layouts/application (4.3ms)
+Completed 200 OK in 48ms (Views: 46.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/restaurants-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-18 18:09:10 +0000
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-02-18 18:09:10 +0000
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for 127.0.0.1 at 2015-02-18 18:09:10 +0000
+
+
+Started GET "/assets/reviews-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-18 18:09:10 +0000
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for 127.0.0.1 at 2015-02-18 18:09:10 +0000
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-02-18 18:09:10 +0000
+
+
+Started GET "/assets/restaurants-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-18 18:09:10 +0000
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-18 18:09:10 +0000
+
+
+Started GET "/assets/application-322efd85de1e19784a5dc35312bc9882.js?body=1" for 127.0.0.1 at 2015-02-18 18:09:10 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-18 20:53:15 +0000
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[35mRestaurant Load (0.2ms)[0m  SELECT "restaurants".* FROM "restaurants"
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 1]]
+  [1m[35mReview Load (0.1ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1  [["restaurant_id", 1]]
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 2]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 3]]
+  Rendered restaurants/index.html.haml within layouts/application (5.5ms)
+Completed 200 OK in 49ms (Views: 47.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/restaurants-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-18 20:53:15 +0000
+
+
+Started GET "/assets/reviews-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-18 20:53:15 +0000
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-02-18 20:53:15 +0000
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for 127.0.0.1 at 2015-02-18 20:53:15 +0000
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-02-18 20:53:15 +0000
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for 127.0.0.1 at 2015-02-18 20:53:15 +0000
+
+
+Started GET "/assets/restaurants-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-18 20:53:15 +0000
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-18 20:53:15 +0000
+
+
+Started GET "/assets/application-322efd85de1e19784a5dc35312bc9882.js?body=1" for 127.0.0.1 at 2015-02-18 20:53:15 +0000
+
+
+Started GET "/restaurants" for 127.0.0.1 at 2015-02-19 09:39:47 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  [1m[36mRestaurant Load (0.2ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  [1m[35mReview Exists (0.4ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 1]]
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 1]]
+  [1m[35mReview Exists (0.2ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 2]]
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 3]]
+  Rendered restaurants/index.html.haml within layouts/application (54.7ms)
+Completed 200 OK in 184ms (Views: 155.2ms | ActiveRecord: 10.9ms)
+
+
+Started GET "/assets/restaurants-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-19 09:39:48 +0000
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-02-19 09:39:48 +0000
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for 127.0.0.1 at 2015-02-19 09:39:48 +0000
+
+
+Started GET "/assets/reviews-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-19 09:39:48 +0000
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-02-19 09:39:48 +0000
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for 127.0.0.1 at 2015-02-19 09:39:48 +0000
+
+
+Started GET "/assets/restaurants-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-19 09:39:48 +0000
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-19 09:39:48 +0000
+
+
+Started GET "/assets/application-322efd85de1e19784a5dc35312bc9882.js?body=1" for 127.0.0.1 at 2015-02-19 09:39:48 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-19 09:39:51 +0000
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  [1m[36mRestaurant Load (0.1ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  [1m[35mReview Exists (0.2ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 1]]
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 1]]
+  [1m[35mReview Exists (0.2ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 2]]
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 3]]
+  Rendered restaurants/index.html.haml within layouts/application (5.5ms)
+Completed 200 OK in 40ms (Views: 38.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/restaurants-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-19 09:39:51 +0000
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-02-19 09:39:51 +0000
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for 127.0.0.1 at 2015-02-19 09:39:51 +0000
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-02-19 09:39:51 +0000
+
+
+Started GET "/assets/reviews-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-19 09:39:51 +0000
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for 127.0.0.1 at 2015-02-19 09:39:51 +0000
+
+
+Started GET "/assets/restaurants-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-19 09:39:51 +0000
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-19 09:39:51 +0000
+
+
+Started GET "/assets/application-322efd85de1e19784a5dc35312bc9882.js?body=1" for 127.0.0.1 at 2015-02-19 09:39:51 +0000
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2015-02-19 09:39:55 +0000
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2015-02-19 09:39:55 +0000
+
+
+Started GET "/users/auth/facebook/callback?code=AQAJVHbmdj1TxQeVwCfv4IV0Akm1pnUlHdRH7qWjR0bKEUAVJiktZP_N86MsyjlnwcGVD1W-INq1KjCoG2HeAJZvfjd8QpBeZfzogE4AVRcF2P8y9-_J3zi7CcDafVEPQjtfsybOybI4cQPp9t26VZ5qj6Mbe2Dr8GDn-y1kEop9rfPEefg8Jx92JR8TUNvJiNgYFXqxCVOlHY_2nyTranjVbIeLdZ58ThhFi_8I4lnPgDmYHbLolNjtmcOKLmWAwB3tNKR_tHiC9KDnpyBkwk2Rlms_PMTHgsPH5Qn5RTK0r2xsgZOlFiIJkNAyuHLFfAM&state=14df5ff5090619344e0961f6356a851d646a97454a7f9272" for 127.0.0.1 at 2015-02-19 09:39:55 +0000
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQAJVHbmdj1TxQeVwCfv4IV0Akm1pnUlHdRH7qWjR0bKEUAVJiktZP_N86MsyjlnwcGVD1W-INq1KjCoG2HeAJZvfjd8QpBeZfzogE4AVRcF2P8y9-_J3zi7CcDafVEPQjtfsybOybI4cQPp9t26VZ5qj6Mbe2Dr8GDn-y1kEop9rfPEefg8Jx92JR8TUNvJiNgYFXqxCVOlHY_2nyTranjVbIeLdZ58ThhFi_8I4lnPgDmYHbLolNjtmcOKLmWAwB3tNKR_tHiC9KDnpyBkwk2Rlms_PMTHgsPH5Qn5RTK0r2xsgZOlFiIJkNAyuHLFfAM", "state"=>"14df5ff5090619344e0961f6356a851d646a97454a7f9272"}
+  [1m[35mUser Load (6.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2  ORDER BY "users"."id" ASC LIMIT 1  [["provider", "facebook"], ["uid", "10153146434361789"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (6.1ms)[0m  UPDATE "users" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5  [["last_sign_in_at", "2015-02-18 15:21:49.474850"], ["current_sign_in_at", "2015-02-19 09:39:55.610241"], ["sign_in_count", 5], ["updated_at", "2015-02-19 09:39:55.611371"], ["id", 1]]
+  [1m[36m (1.2ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 40ms (ActiveRecord: 15.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-19 09:39:55 +0000
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  [1m[36mRestaurant Load (0.1ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 1]]
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 1]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 2]]
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 3]]
+  Rendered restaurants/index.html.haml within layouts/application (4.1ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 59ms (Views: 57.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/restaurants-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-19 09:39:55 +0000
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for 127.0.0.1 at 2015-02-19 09:39:55 +0000
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-02-19 09:39:55 +0000
+
+
+Started GET "/assets/reviews-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-19 09:39:55 +0000
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-02-19 09:39:55 +0000
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for 127.0.0.1 at 2015-02-19 09:39:55 +0000
+
+
+Started GET "/assets/restaurants-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-19 09:39:55 +0000
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-19 09:39:55 +0000
+
+
+Started GET "/assets/application-322efd85de1e19784a5dc35312bc9882.js?body=1" for 127.0.0.1 at 2015-02-19 09:39:55 +0000
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2015-02-19 09:40:00 +0000
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"BLhsIwahFCsFKRbqb86rsQR6GSFdffWLpWYN++HmifyUL7JrCRtwMTL/UG+LT2NKaCh8717DIBwKsKv82n7+Kw=="}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-19 09:40:00 +0000
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  [1m[36mRestaurant Load (0.1ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 1]]
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 1]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 2]]
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 3]]
+  Rendered restaurants/index.html.haml within layouts/application (4.8ms)
+Completed 200 OK in 49ms (Views: 47.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/restaurants-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-19 09:40:00 +0000
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for 127.0.0.1 at 2015-02-19 09:40:00 +0000
+
+
+Started GET "/assets/reviews-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-19 09:40:00 +0000
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-02-19 09:40:00 +0000
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for 127.0.0.1 at 2015-02-19 09:40:00 +0000
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-02-19 09:40:00 +0000
+
+
+Started GET "/assets/restaurants-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-19 09:40:00 +0000
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-19 09:40:00 +0000
+
+
+Started GET "/assets/application-322efd85de1e19784a5dc35312bc9882.js?body=1" for 127.0.0.1 at 2015-02-19 09:40:00 +0000
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2015-02-19 09:40:26 +0000
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2015-02-19 09:40:26 +0000
+
+
+Started GET "/users/auth/facebook/callback?code=AQA669vDSTOW68yPnGd1vQA85DgXqVVVMbYUOumBiKO76tw-UIu5kmPpAveRNqfEUORRJHReHYDux-t1accF5tlUCcl5AddV_zBQ170S517VmxNy26MwLD_21XI2cjar6tQlNDQNhTw0IgoFFbGbuuqHbqUkqsaJ2EmD0XUlsolrmdvdQgMcemj88CkhzBud31axEBXOlAw_Cs8UDyRfdnFwBmw8Rqb-lt6JWCgg--MNB0H5SyOpaZP_h1LLwCpNYoIHOj7f6ewYLvUr1MgYJd0L5BFjmWP41OT9B28vnse-8xkaQX-bVbtyoK-VRoCE2D0&state=557cd67b95d315876e67a3ebe39e082552e42c035f50e317" for 127.0.0.1 at 2015-02-19 09:40:26 +0000
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQA669vDSTOW68yPnGd1vQA85DgXqVVVMbYUOumBiKO76tw-UIu5kmPpAveRNqfEUORRJHReHYDux-t1accF5tlUCcl5AddV_zBQ170S517VmxNy26MwLD_21XI2cjar6tQlNDQNhTw0IgoFFbGbuuqHbqUkqsaJ2EmD0XUlsolrmdvdQgMcemj88CkhzBud31axEBXOlAw_Cs8UDyRfdnFwBmw8Rqb-lt6JWCgg--MNB0H5SyOpaZP_h1LLwCpNYoIHOj7f6ewYLvUr1MgYJd0L5BFjmWP41OT9B28vnse-8xkaQX-bVbtyoK-VRoCE2D0", "state"=>"557cd67b95d315876e67a3ebe39e082552e42c035f50e317"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2  ORDER BY "users"."id" ASC LIMIT 1  [["provider", "facebook"], ["uid", "10153146434361789"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "users" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5  [["last_sign_in_at", "2015-02-19 09:39:55.610241"], ["current_sign_in_at", "2015-02-19 09:40:26.928430"], ["sign_in_count", 6], ["updated_at", "2015-02-19 09:40:26.929568"], ["id", 1]]
+  [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-19 09:40:26 +0000
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  [1m[36mRestaurant Load (0.2ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 1]]
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 1]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 2]]
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 3]]
+  Rendered restaurants/index.html.haml within layouts/application (4.3ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 45ms (Views: 43.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/restaurants-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-19 09:40:27 +0000
+
+
+Started GET "/assets/reviews-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-19 09:40:27 +0000
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-02-19 09:40:27 +0000
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for 127.0.0.1 at 2015-02-19 09:40:27 +0000
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for 127.0.0.1 at 2015-02-19 09:40:27 +0000
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-02-19 09:40:27 +0000
+
+
+Started GET "/assets/restaurants-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-19 09:40:27 +0000
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-19 09:40:27 +0000
+
+
+Started GET "/assets/application-322efd85de1e19784a5dc35312bc9882.js?body=1" for 127.0.0.1 at 2015-02-19 09:40:27 +0000
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2015-02-19 09:50:00 +0000
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"nHSNJWQY7+iroC1ZvOu/nY79b3d7PzltC9hsvmHPd2D/D1nTKg0Qh8HZsXsn4jfvT+GIP9fu8XyyU6Lt9nsuhg=="}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-19 09:50:00 +0000
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  [1m[36mRestaurant Load (0.1ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 1]]
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 1]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 2]]
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 3]]
+  Rendered restaurants/index.html.haml within layouts/application (35.2ms)
+Completed 200 OK in 86ms (Views: 84.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/restaurants-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-19 09:50:00 +0000
+
+
+Started GET "/assets/reviews-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-19 09:50:00 +0000
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-02-19 09:50:00 +0000
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-02-19 09:50:00 +0000
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for 127.0.0.1 at 2015-02-19 09:50:00 +0000
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for 127.0.0.1 at 2015-02-19 09:50:00 +0000
+
+
+Started GET "/assets/restaurants-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-19 09:50:00 +0000
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-19 09:50:00 +0000
+
+
+Started GET "/assets/application-322efd85de1e19784a5dc35312bc9882.js?body=1" for 127.0.0.1 at 2015-02-19 09:50:00 +0000
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2015-02-19 09:50:55 +0000
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2015-02-19 09:50:55 +0000
+
+
+Started GET "/users/auth/facebook/callback?code=AQAP8E3BdsJggs4kYEFQkwIXwG2Ak4yXMsiJksWYHEObq6zZ35db0J2ppgpaYp6a0tHZ-RECFwA-1zF1pwOa4v-WXKSpXxIJUy9i_JnfVshdevppSeS4jkEkUuU52xtsXe5D2m2nefHju-I_j2hN-K6wkksdn2appvY_SV0d5-_YIF7kKIh_cMLm1jVtfF7b1DAOyH1qwGX86-8EH4_iuZPWJcWkPW94-CZ-VqcgFWyoVekaNfKBQPbt5P1A7PfsQDGtJ6KbVtM9mlNI7IZnQEaNZ-bhXcH0Gz0wrf7vV5ZYTIpGZSTnTUcgjTqSLUd7OeQ&state=58480f43b7693ae3086cf91928d0f126e3dd830c9e7e3816" for 127.0.0.1 at 2015-02-19 09:50:55 +0000
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQAP8E3BdsJggs4kYEFQkwIXwG2Ak4yXMsiJksWYHEObq6zZ35db0J2ppgpaYp6a0tHZ-RECFwA-1zF1pwOa4v-WXKSpXxIJUy9i_JnfVshdevppSeS4jkEkUuU52xtsXe5D2m2nefHju-I_j2hN-K6wkksdn2appvY_SV0d5-_YIF7kKIh_cMLm1jVtfF7b1DAOyH1qwGX86-8EH4_iuZPWJcWkPW94-CZ-VqcgFWyoVekaNfKBQPbt5P1A7PfsQDGtJ6KbVtM9mlNI7IZnQEaNZ-bhXcH0Gz0wrf7vV5ZYTIpGZSTnTUcgjTqSLUd7OeQ", "state"=>"58480f43b7693ae3086cf91928d0f126e3dd830c9e7e3816"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2  ORDER BY "users"."id" ASC LIMIT 1  [["provider", "facebook"], ["uid", "10153146434361789"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5  [["last_sign_in_at", "2015-02-19 09:40:26.928430"], ["current_sign_in_at", "2015-02-19 09:50:55.978648"], ["sign_in_count", 7], ["updated_at", "2015-02-19 09:50:55.979819"], ["id", 1]]
+  [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-19 09:50:55 +0000
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  [1m[36mRestaurant Load (0.1ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 1]]
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 1]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 2]]
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 3]]
+  Rendered restaurants/index.html.haml within layouts/application (4.2ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 52ms (Views: 50.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/restaurants-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-19 09:50:56 +0000
+
+
+Started GET "/assets/reviews-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-19 09:50:56 +0000
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for 127.0.0.1 at 2015-02-19 09:50:56 +0000
+
+
+Started GET "/assets/restaurants-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-19 09:50:56 +0000
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-02-19 09:50:56 +0000
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-02-19 09:50:56 +0000
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for 127.0.0.1 at 2015-02-19 09:50:56 +0000
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-19 09:50:56 +0000
+
+
+Started GET "/assets/application-322efd85de1e19784a5dc35312bc9882.js?body=1" for 127.0.0.1 at 2015-02-19 09:50:56 +0000
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2015-02-19 09:51:12 +0000
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"6s13iavw71FctNaQsr9Bw0D+fWrlX96Tf4e7jaH0l0zxe1OthAMxpDa0bVFfBKaVkMQPVpCGdehDJdjTH0jMzA=="}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-19 09:51:13 +0000
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  [1m[36mRestaurant Load (0.2ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 1]]
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 1]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 2]]
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 3]]
+  Rendered restaurants/index.html.haml within layouts/application (5.1ms)
+Completed 200 OK in 48ms (Views: 46.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/restaurants-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-19 09:51:13 +0000
+
+
+Started GET "/assets/reviews-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-19 09:51:13 +0000
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for 127.0.0.1 at 2015-02-19 09:51:13 +0000
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-02-19 09:51:13 +0000
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-02-19 09:51:13 +0000
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for 127.0.0.1 at 2015-02-19 09:51:13 +0000
+
+
+Started GET "/assets/restaurants-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-19 09:51:13 +0000
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-19 09:51:13 +0000
+
+
+Started GET "/assets/application-322efd85de1e19784a5dc35312bc9882.js?body=1" for 127.0.0.1 at 2015-02-19 09:51:13 +0000
+
+
+Started GET "/restaurants/new" for 127.0.0.1 at 2015-02-19 09:51:38 +0000
+Processing by RestaurantsController#new as HTML
+  Rendered restaurants/new.html.haml within layouts/application (5.7ms)
+Completed 200 OK in 52ms (Views: 51.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/restaurants/new" for 127.0.0.1 at 2015-02-19 09:52:17 +0000
+Processing by RestaurantsController#new as HTML
+  Rendered restaurants/new.html.haml within layouts/application (1.2ms)
+Completed 200 OK in 47ms (Views: 46.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-19 14:17:39 +0000
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  [1m[36mRestaurant Load (0.2ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  [1m[35mReview Exists (0.2ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 1]]
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 1]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 2]]
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 3]]
+  Rendered restaurants/index.html.haml within layouts/application (7.5ms)
+Completed 200 OK in 52ms (Views: 50.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/restaurants-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-19 14:17:39 +0000
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for 127.0.0.1 at 2015-02-19 14:17:39 +0000
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-02-19 14:17:39 +0000
+
+
+Started GET "/assets/reviews-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-19 14:17:39 +0000
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-02-19 14:17:39 +0000
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for 127.0.0.1 at 2015-02-19 14:17:39 +0000
+
+
+Started GET "/assets/restaurants-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-19 14:17:39 +0000
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-19 14:17:39 +0000
+
+
+Started GET "/assets/application-322efd85de1e19784a5dc35312bc9882.js?body=1" for 127.0.0.1 at 2015-02-19 14:17:39 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-19 14:33:29 +0000
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  [1m[36mRestaurant Load (0.1ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 1]]
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 1]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 2]]
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 3]]
+  Rendered restaurants/index.html.haml within layouts/application (7.2ms)
+Completed 200 OK in 46ms (Views: 44.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/restaurants-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-19 14:33:29 +0000
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for 127.0.0.1 at 2015-02-19 14:33:29 +0000
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-02-19 14:33:29 +0000
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-02-19 14:33:29 +0000
+
+
+Started GET "/assets/reviews-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-19 14:33:29 +0000
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for 127.0.0.1 at 2015-02-19 14:33:29 +0000
+
+
+Started GET "/assets/restaurants-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-19 14:33:29 +0000
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-19 14:33:29 +0000
+
+
+Started GET "/assets/application-322efd85de1e19784a5dc35312bc9882.js?body=1" for 127.0.0.1 at 2015-02-19 14:33:29 +0000
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2015-02-19 14:33:38 +0000
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2015-02-19 14:33:38 +0000
+
+
+Started GET "/users/auth/facebook/callback?code=AQBonL7oDEjuO0T4Lt5kN-cO13yWyyYMXRUA8SwUjly-8FLjS-2BJF7-g9pzOR3SxPLkwcDKqz_rl5kQnaaQZ0Pa_dhyGgLOjuHZvuRZg9-cwGHYonW7QB4uWa2-hdIqmvyb4kyPnMIkbS8URMh3_ZYLj4diSmwdR6J_SDtlWZI41pyeN3ELe4GOFNmO9PUYWJiqz6AU1YHUmZoHKdCcbV-kZyeBzkINNci7shbD9cEe6gTrHdP69tWIS-XknAyH4R6m0vGLasUaeuMBt4XeBhnhpF8Z92gYX2OL2rk2jwyfpLw4gAstWJN4ZD36_2_kwmw&state=c26d54d092a8b139120ae19f0469769e39834191c67df552" for 127.0.0.1 at 2015-02-19 14:33:38 +0000
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQBonL7oDEjuO0T4Lt5kN-cO13yWyyYMXRUA8SwUjly-8FLjS-2BJF7-g9pzOR3SxPLkwcDKqz_rl5kQnaaQZ0Pa_dhyGgLOjuHZvuRZg9-cwGHYonW7QB4uWa2-hdIqmvyb4kyPnMIkbS8URMh3_ZYLj4diSmwdR6J_SDtlWZI41pyeN3ELe4GOFNmO9PUYWJiqz6AU1YHUmZoHKdCcbV-kZyeBzkINNci7shbD9cEe6gTrHdP69tWIS-XknAyH4R6m0vGLasUaeuMBt4XeBhnhpF8Z92gYX2OL2rk2jwyfpLw4gAstWJN4ZD36_2_kwmw", "state"=>"c26d54d092a8b139120ae19f0469769e39834191c67df552"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2  ORDER BY "users"."id" ASC LIMIT 1  [["provider", "facebook"], ["uid", "10153146434361789"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "users" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5  [["last_sign_in_at", "2015-02-19 09:50:55.978648"], ["current_sign_in_at", "2015-02-19 14:33:38.588871"], ["sign_in_count", 8], ["updated_at", "2015-02-19 14:33:38.590133"], ["id", 1]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-19 14:33:38 +0000
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  [1m[36mRestaurant Load (0.1ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 1]]
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 1]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 2]]
+  [1m[36mReview Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 3]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered restaurants/index.html.haml within layouts/application (5.9ms)
+Completed 200 OK in 51ms (Views: 49.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/restaurants-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-19 14:33:38 +0000
+
+
+Started GET "/assets/reviews-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-19 14:33:38 +0000
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-02-19 14:33:38 +0000
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for 127.0.0.1 at 2015-02-19 14:33:38 +0000
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for 127.0.0.1 at 2015-02-19 14:33:38 +0000
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-02-19 14:33:38 +0000
+
+
+Started GET "/assets/restaurants-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-19 14:33:38 +0000
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-19 14:33:38 +0000
+
+
+Started GET "/assets/application-322efd85de1e19784a5dc35312bc9882.js?body=1" for 127.0.0.1 at 2015-02-19 14:33:38 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-19 15:00:40 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  [1m[36mRestaurant Load (0.1ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  [1m[35mReview Exists (0.3ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 1]]
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 1]]
+  [1m[35mReview Exists (0.2ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 2]]
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 3]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered restaurants/index.html.haml within layouts/application (63.7ms)
+Completed 200 OK in 209ms (Views: 190.6ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/assets/restaurants-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-19 15:00:41 +0000
+
+
+Started GET "/assets/reviews-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-19 15:00:41 +0000
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-02-19 15:00:41 +0000
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for 127.0.0.1 at 2015-02-19 15:00:41 +0000
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for 127.0.0.1 at 2015-02-19 15:00:41 +0000
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-02-19 15:00:41 +0000
+
+
+Started GET "/assets/restaurants-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-19 15:00:41 +0000
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-19 15:00:41 +0000
+
+
+Started GET "/assets/application-322efd85de1e19784a5dc35312bc9882.js?body=1" for 127.0.0.1 at 2015-02-19 15:00:41 +0000
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2015-02-19 15:00:43 +0000
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"5p4dRywruVxIsEAaFjQsl7xe79VAdqQafC89L7r2IN7hFuxaRn5/0j1LTzDmaLIUvGf717rchLuKaoB96i1v0A=="}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 12ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-19 15:00:43 +0000
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  [1m[36mRestaurant Load (0.2ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  [1m[35mReview Exists (0.2ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 1]]
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 1]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 2]]
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 3]]
+  Rendered restaurants/index.html.haml within layouts/application (8.9ms)
+Completed 200 OK in 44ms (Views: 42.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/restaurants-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-19 15:00:43 +0000
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for 127.0.0.1 at 2015-02-19 15:00:43 +0000
+
+
+Started GET "/assets/reviews-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-19 15:00:43 +0000
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-02-19 15:00:43 +0000
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for 127.0.0.1 at 2015-02-19 15:00:43 +0000
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-02-19 15:00:43 +0000
+
+
+Started GET "/assets/restaurants-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-19 15:00:43 +0000
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-19 15:00:43 +0000
+
+
+Started GET "/assets/application-322efd85de1e19784a5dc35312bc9882.js?body=1" for 127.0.0.1 at 2015-02-19 15:00:43 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-19 15:00:46 +0000
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  [1m[36mRestaurant Load (0.1ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 1]]
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 1]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 2]]
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 3]]
+  Rendered restaurants/index.html.haml within layouts/application (4.1ms)
+Completed 200 OK in 54ms (Views: 52.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/reviews-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-19 15:00:46 +0000
+
+
+Started GET "/assets/restaurants-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-19 15:00:46 +0000
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-02-19 15:00:46 +0000
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for 127.0.0.1 at 2015-02-19 15:00:46 +0000
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-02-19 15:00:46 +0000
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for 127.0.0.1 at 2015-02-19 15:00:46 +0000
+
+
+Started GET "/assets/restaurants-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-19 15:00:46 +0000
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-19 15:00:46 +0000
+
+
+Started GET "/assets/application-322efd85de1e19784a5dc35312bc9882.js?body=1" for 127.0.0.1 at 2015-02-19 15:00:46 +0000
+
+
+Started GET "/restaurants/1/edit" for 127.0.0.1 at 2015-02-19 15:00:55 +0000
+Processing by RestaurantsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mRestaurant Load (0.2ms)[0m  SELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered restaurants/edit.html.haml within layouts/application (8.3ms)
+Completed 200 OK in 52ms (Views: 51.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-19 15:08:28 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  [1m[36mRestaurant Load (0.2ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  [1m[35mReview Exists (0.2ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 1]]
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 1]]
+  [1m[35mReview Exists (0.3ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 2]]
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 3]]
+  Rendered restaurants/index.html.haml within layouts/application (36.6ms)
+Completed 200 OK in 133ms (Views: 118.4ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/assets/restaurants-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-19 15:08:28 +0000
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-02-19 15:08:28 +0000
+
+
+Started GET "/assets/reviews-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-19 15:08:28 +0000
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for 127.0.0.1 at 2015-02-19 15:08:28 +0000
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-02-19 15:08:28 +0000
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for 127.0.0.1 at 2015-02-19 15:08:28 +0000
+
+
+Started GET "/assets/restaurants-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-19 15:08:28 +0000
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-19 15:08:28 +0000
+
+
+Started GET "/assets/application-322efd85de1e19784a5dc35312bc9882.js?body=1" for 127.0.0.1 at 2015-02-19 15:08:28 +0000
+
+
+Started GET "/restaurants/1/reviews/new" for 127.0.0.1 at 2015-02-19 15:08:33 +0000
+Processing by ReviewsController#new as HTML
+  Parameters: {"restaurant_id"=>"1"}
+  [1m[35mRestaurant Load (0.2ms)[0m  SELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered reviews/new.html.haml within layouts/application (10.5ms)
+Completed 200 OK in 57ms (Views: 52.9ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/restaurants/1/reviews" for 127.0.0.1 at 2015-02-19 15:08:37 +0000
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6Fiv5OrWS3SQ6+NxX4UDAaq2MSwyDAYfTL1QXtl87XAwiPQuN0/AmrQZjNaThNnaDR+t8yRzwDcoWaB2v/ODyw==", "review"=>{"thoughts"=>"Shit", "rating"=>"1"}, "commit"=>"Leave Review", "restaurant_id"=>"1"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "reviews" ("thoughts", "rating", "restaurant_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["thoughts", "Shit"], ["rating", 1], ["restaurant_id", 1], ["created_at", "2015-02-19 15:08:37.260705"], ["updated_at", "2015-02-19 15:08:37.260705"]]
+  [1m[35m (6.0ms)[0m  COMMIT
+Redirected to http://localhost:3000/restaurants
+Completed 500 Internal Server Error in 14ms
+
+NameError (undefined local variable or method `restaurant' for #<ReviewsController:0x007fbae6e34ee8>):
+  app/controllers/reviews_controller.rb:12:in `create'
+
+
+  Rendered /opt/rubies/2.1.3/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (4.1ms)
+  Rendered /opt/rubies/2.1.3/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /opt/rubies/2.1.3/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /opt/rubies/2.1.3/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.7ms)
+  Rendered /opt/rubies/2.1.3/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (28.1ms)
+
+
+Started GET "/restaurants/1/reviews" for 127.0.0.1 at 2015-02-19 15:08:51 +0000
+
+AbstractController::ActionNotFound (The action 'index' could not be found for ReviewsController):
+  actionpack (4.2.0) lib/abstract_controller/base.rb:132:in `process'
+  actionview (4.2.0) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.0) lib/action_controller/metal.rb:195:in `dispatch'
+  actionpack (4.2.0) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.0) lib/action_controller/metal.rb:236:in `block in action'
+  actionpack (4.2.0) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (4.2.0) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (4.2.0) lib/action_dispatch/routing/route_set.rb:42:in `serve'
+  actionpack (4.2.0) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.0) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.0) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.0) lib/action_dispatch/routing/route_set.rb:802:in `call'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:186:in `call!'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:164:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.6.0) lib/rack/etag.rb:24:in `call'
+  rack (1.6.0) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.0) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.0) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.0) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.0) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:647:in `call'
+  activerecord (4.2.0) lib/active_record/migration.rb:378:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:88:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:88:in `_run_callbacks'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:734:in `_run_call_callbacks'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:18:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /opt/rubies/2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /opt/rubies/2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /opt/rubies/2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /opt/rubies/2.1.3/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/unknown_action.html.erb within rescues/layout (0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-19 15:08:55 +0000
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[35mRestaurant Load (0.1ms)[0m  SELECT "restaurants".* FROM "restaurants"
+  [1m[36mReview Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 1]]
+  [1m[35mReview Load (0.1ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1  [["restaurant_id", 1]]
+  [1m[36mReview Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 2]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 3]]
+  Rendered restaurants/index.html.haml within layouts/application (18.0ms)
+Completed 200 OK in 67ms (Views: 61.7ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/assets/restaurants-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-19 15:08:55 +0000
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for 127.0.0.1 at 2015-02-19 15:08:55 +0000
+
+
+Started GET "/assets/reviews-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-19 15:08:55 +0000
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-02-19 15:08:55 +0000
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for 127.0.0.1 at 2015-02-19 15:08:55 +0000
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-02-19 15:08:55 +0000
+
+
+Started GET "/assets/restaurants-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-19 15:08:55 +0000
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-19 15:08:55 +0000
+
+
+Started GET "/assets/application-322efd85de1e19784a5dc35312bc9882.js?body=1" for 127.0.0.1 at 2015-02-19 15:08:55 +0000
+
+
+Started GET "/restaurants/1/reviews/new" for 127.0.0.1 at 2015-02-19 15:08:57 +0000
+Processing by ReviewsController#new as HTML
+  Parameters: {"restaurant_id"=>"1"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered reviews/new.html.haml within layouts/application (2.3ms)
+Completed 200 OK in 54ms (Views: 51.9ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/restaurants/1/reviews" for 127.0.0.1 at 2015-02-19 15:09:01 +0000
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DPeFTp2eNpxpGEvjOUSIxr6bHk1XvMR/DQCAarVwLi3UJ96EQAe9ck3qJET1RVIdGTKCkkHDAldp5HBC0/9Alg==", "review"=>{"thoughts"=>"Shit", "rating"=>"1"}, "commit"=>"Leave Review", "restaurant_id"=>"1"}
+  [1m[35mRestaurant Load (0.2ms)[0m  SELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "reviews" ("thoughts", "rating", "restaurant_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["thoughts", "Shit"], ["rating", 1], ["restaurant_id", 1], ["created_at", "2015-02-19 15:09:01.538804"], ["updated_at", "2015-02-19 15:09:01.538804"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/restaurants
+Completed 500 Internal Server Error in 6ms
+
+NoMethodError (undefined method `has_reviewed?' for nil:NilClass):
+  app/controllers/reviews_controller.rb:12:in `create'
+
+
+  Rendered /opt/rubies/2.1.3/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (3.9ms)
+  Rendered /opt/rubies/2.1.3/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /opt/rubies/2.1.3/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /opt/rubies/2.1.3/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.8ms)
+  Rendered /opt/rubies/2.1.3/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (19.2ms)
+
+
+Started GET "/restaurants" for 127.0.0.1 at 2015-02-19 15:11:33 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  [1m[36mRestaurant Load (0.1ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  [1m[35mReview Exists (0.3ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 1]]
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 1]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 2]]
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 3]]
+  Rendered restaurants/index.html.haml within layouts/application (35.9ms)
+Completed 200 OK in 131ms (Views: 115.3ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/assets/restaurants-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-19 15:11:33 +0000
+
+
+Started GET "/assets/reviews-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-19 15:11:33 +0000
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for 127.0.0.1 at 2015-02-19 15:11:33 +0000
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-02-19 15:11:33 +0000
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for 127.0.0.1 at 2015-02-19 15:11:33 +0000
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-02-19 15:11:33 +0000
+
+
+Started GET "/assets/restaurants-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-19 15:11:33 +0000
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-19 15:11:33 +0000
+
+
+Started GET "/assets/application-322efd85de1e19784a5dc35312bc9882.js?body=1" for 127.0.0.1 at 2015-02-19 15:11:33 +0000
+
+
+Started GET "/restaurants/1/edit" for 127.0.0.1 at 2015-02-19 15:11:43 +0000
+Processing by RestaurantsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mRestaurant Load (0.2ms)[0m  SELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered restaurants/edit.html.haml within layouts/application (9.1ms)
+Completed 200 OK in 47ms (Views: 43.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/restaurants" for 127.0.0.1 at 2015-02-19 15:13:40 +0000
+Processing by RestaurantsController#index as HTML
+  Rendered restaurants/index.html.haml within layouts/application (2.1ms)
+Completed 500 Internal Server Error in 5ms
+
+ActionView::Template::Error (Illegal nesting: nesting within plain text is illegal.):
+    2:   - @restaurants.each do |restaurant|
+    3:     %h1= link_to restaurant.name, restaurant_path(restaurant)
+    4:     Reviews for
+    5:       = restaurant.name
+    6: 
+    7:       -if restaurant.reviews.any?
+    8:         %ul
+  app/views/restaurants/index.html.haml:5
+
+
+  Rendered /opt/rubies/2.1.3/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (6.6ms)
+  Rendered /opt/rubies/2.1.3/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /opt/rubies/2.1.3/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /opt/rubies/2.1.3/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.6ms)
+  Rendered /opt/rubies/2.1.3/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.html.erb within rescues/layout (22.8ms)
+
+
+Started GET "/restaurants" for 127.0.0.1 at 2015-02-19 15:14:00 +0000
+Processing by RestaurantsController#index as HTML
+  Rendered restaurants/index.html.haml within layouts/application (1.2ms)
+Completed 500 Internal Server Error in 5ms
+
+ActionView::Template::Error (Illegal nesting: nesting within plain text is illegal.):
+    3:     %h1= link_to restaurant.name, restaurant_path(restaurant)
+    4:     %h3
+    5:     Reviews for
+    6:       = restaurant.name
+    7: 
+    8:       -if restaurant.reviews.any?
+    9:         %ul
+  app/views/restaurants/index.html.haml:6
+
+
+  Rendered /opt/rubies/2.1.3/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (5.1ms)
+  Rendered /opt/rubies/2.1.3/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /opt/rubies/2.1.3/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /opt/rubies/2.1.3/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.6ms)
+  Rendered /opt/rubies/2.1.3/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.html.erb within rescues/layout (19.0ms)
+
+
+Started GET "/restaurants" for 127.0.0.1 at 2015-02-19 15:14:13 +0000
+Processing by RestaurantsController#index as HTML
+  Rendered restaurants/index.html.haml within layouts/application (1.2ms)
+Completed 500 Internal Server Error in 4ms
+
+ActionView::Template::Error (Illegal nesting: nesting within plain text is illegal.):
+    3:     %h1= link_to restaurant.name, restaurant_path(restaurant)
+    4:     %h3
+    5:       Reviews for
+    6:         = restaurant.name
+    7: 
+    8:         -if restaurant.reviews.any?
+    9:           %ul
+  app/views/restaurants/index.html.haml:6
+
+
+  Rendered /opt/rubies/2.1.3/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (5.8ms)
+  Rendered /opt/rubies/2.1.3/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /opt/rubies/2.1.3/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /opt/rubies/2.1.3/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.7ms)
+  Rendered /opt/rubies/2.1.3/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.html.erb within rescues/layout (20.9ms)
+
+
+Started GET "/restaurants" for 127.0.0.1 at 2015-02-19 15:14:31 +0000
+Processing by RestaurantsController#index as HTML
+  Rendered restaurants/index.html.haml within layouts/application (1.2ms)
+Completed 500 Internal Server Error in 4ms
+
+ActionView::Template::Error (Illegal nesting: nesting within plain text is illegal.):
+    3:     %h1= link_to restaurant.name, restaurant_path(restaurant)
+    4:     %h3
+    5:     Reviews for
+    6:       = restaurant.name
+    7: 
+    8:       -if restaurant.reviews.any?
+    9:         %ul
+  app/views/restaurants/index.html.haml:6
+
+
+  Rendered /opt/rubies/2.1.3/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (5.0ms)
+  Rendered /opt/rubies/2.1.3/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /opt/rubies/2.1.3/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /opt/rubies/2.1.3/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.6ms)
+  Rendered /opt/rubies/2.1.3/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.html.erb within rescues/layout (19.6ms)
+
+
+Started GET "/restaurants" for 127.0.0.1 at 2015-02-19 15:15:10 +0000
+Processing by RestaurantsController#index as HTML
+  Rendered restaurants/index.html.haml within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 4ms
+
+ActionView::Template::Error (Illegal nesting: nesting within plain text is illegal.):
+    3:     %h1= link_to restaurant.name, restaurant_path(restaurant)
+    4:     %h3
+    5:     Reviews:
+    6:       -if restaurant.reviews.any?
+    7:         %ul
+    8:           - restaurant.reviews.each do |review|
+    9:             %li
+  app/views/restaurants/index.html.haml:6
+
+
+  Rendered /opt/rubies/2.1.3/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (5.3ms)
+  Rendered /opt/rubies/2.1.3/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /opt/rubies/2.1.3/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /opt/rubies/2.1.3/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.6ms)
+  Rendered /opt/rubies/2.1.3/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.html.erb within rescues/layout (19.7ms)
+
+
+Started GET "/restaurants" for 127.0.0.1 at 2015-02-19 15:15:48 +0000
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[35mRestaurant Load (0.1ms)[0m  SELECT "restaurants".* FROM "restaurants"
+  [1m[36mReview Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 1]]
+  [1m[35mReview Load (0.1ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1  [["restaurant_id", 1]]
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 2]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 3]]
+  Rendered restaurants/index.html.haml within layouts/application (6.7ms)
+Completed 200 OK in 46ms (Views: 44.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/restaurants-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-19 15:15:48 +0000
+
+
+Started GET "/assets/reviews-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-19 15:15:48 +0000
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-02-19 15:15:48 +0000
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-02-19 15:15:48 +0000
+
+
+Started GET "/assets/restaurants-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-19 15:15:48 +0000
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for 127.0.0.1 at 2015-02-19 15:15:48 +0000
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for 127.0.0.1 at 2015-02-19 15:15:48 +0000
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-19 15:15:48 +0000
+
+
+Started GET "/assets/application-322efd85de1e19784a5dc35312bc9882.js?body=1" for 127.0.0.1 at 2015-02-19 15:15:48 +0000
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2015-02-19 15:20:19 +0000
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2015-02-19 15:20:19 +0000
+
+
+Started GET "/users/auth/facebook/callback?code=AQCdqEd1Md0Y9u6frp_IFYbzQPEgU4Yi5ni2YIqF9AKl_4IprB6y09IjcN30FhIQFwS2_5hMh5NrHpbxcosqYaRZ_0PsVgWYIB96UPdiqdDFXIKqtXgSbp4yATp25BG-A_I6a7mUal-_cDuSenqpvWOwFhDWIvWqdkHZdVboCoOIhfrkrGn9mMBGNDvUCDVkSf6OikQZx6NLQtB5bYdlMjM8DUvpBXNErF3RGQ64TfY_E9KcUkzC88dEoE0bsPHIUfuPTTbToHiTfPa0v03eZsF1SqS6KLaLWOrgd-zjh6LZ3q1CTYqJU-Z-bIkSFhcHVgk&state=8816cf33b74bbbb9db62c2a3b2e48e23e28df1bdfe0a5e1c" for 127.0.0.1 at 2015-02-19 15:20:19 +0000
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQCdqEd1Md0Y9u6frp_IFYbzQPEgU4Yi5ni2YIqF9AKl_4IprB6y09IjcN30FhIQFwS2_5hMh5NrHpbxcosqYaRZ_0PsVgWYIB96UPdiqdDFXIKqtXgSbp4yATp25BG-A_I6a7mUal-_cDuSenqpvWOwFhDWIvWqdkHZdVboCoOIhfrkrGn9mMBGNDvUCDVkSf6OikQZx6NLQtB5bYdlMjM8DUvpBXNErF3RGQ64TfY_E9KcUkzC88dEoE0bsPHIUfuPTTbToHiTfPa0v03eZsF1SqS6KLaLWOrgd-zjh6LZ3q1CTYqJU-Z-bIkSFhcHVgk", "state"=>"8816cf33b74bbbb9db62c2a3b2e48e23e28df1bdfe0a5e1c"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2  ORDER BY "users"."id" ASC LIMIT 1[0m  [["provider", "facebook"], ["uid", "10153146434361789"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["last_sign_in_at", "2015-02-19 14:33:38.588871"], ["current_sign_in_at", "2015-02-19 15:20:20.253578"], ["sign_in_count", 9], ["updated_at", "2015-02-19 15:20:20.254697"], ["id", 1]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 13ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-19 15:20:20 +0000
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[35mRestaurant Load (0.1ms)[0m  SELECT "restaurants".* FROM "restaurants"
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 1]]
+  [1m[35mReview Load (0.1ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1  [["restaurant_id", 1]]
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 2]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered restaurants/index.html.haml within layouts/application (17.8ms)
+Completed 500 Internal Server Error in 20ms
+
+ActionView::Template::Error (undefined local variable or method `restaurant' for #<#<Class:0x007faf73f29610>:0x007faf73de2a68>):
+    15:       -else 
+    16:         %p No Reviews.
+    17:   -if current_user  
+    18:     %h5= link_to "Edit #{restaurant.name}", edit_restaurant_path(restaurant)
+    19:     %h5= link_to "Delete #{restaurant.name}", restaurant_path(restaurant), method: :delete
+    20:     %h5= link_to "Review #{restaurant.name}", new_restaurant_review_path(restaurant)
+    21:       
+  app/views/restaurants/index.html.haml:18:in `_app_views_restaurants_index_html_haml__2461148144092576219_70195786545820'
+
+
+  Rendered /opt/rubies/2.1.3/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (4.9ms)
+  Rendered /opt/rubies/2.1.3/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /opt/rubies/2.1.3/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /opt/rubies/2.1.3/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (7.6ms)
+  Rendered /opt/rubies/2.1.3/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.html.erb within rescues/layout (26.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-19 15:23:24 +0000
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  [1m[36mRestaurant Load (0.1ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  [1m[35mReview Exists (0.2ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 1]]
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 2]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 3]]
+  Rendered restaurants/index.html.haml within layouts/application (8.7ms)
+Completed 200 OK in 46ms (Views: 44.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/restaurants-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-19 15:23:24 +0000
+
+
+Started GET "/assets/reviews-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-19 15:23:24 +0000
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for 127.0.0.1 at 2015-02-19 15:23:24 +0000
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-02-19 15:23:24 +0000
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-02-19 15:23:24 +0000
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for 127.0.0.1 at 2015-02-19 15:23:24 +0000
+
+
+Started GET "/assets/restaurants-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-19 15:23:24 +0000
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-19 15:23:24 +0000
+
+
+Started GET "/assets/application-322efd85de1e19784a5dc35312bc9882.js?body=1" for 127.0.0.1 at 2015-02-19 15:23:24 +0000
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2015-02-19 15:23:27 +0000
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"zAqolpz23+vGRwIU4U4KmX+mkKtZuZqy62qlOIqTIhUolgipkNWJRVWAsb7CrUM6hsFSww/9f/ppEbyRRxa51g=="}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-19 15:23:27 +0000
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  [1m[36mRestaurant Load (0.1ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 1]]
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 1]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 2]]
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 3]]
+  Rendered restaurants/index.html.haml within layouts/application (4.3ms)
+Completed 200 OK in 47ms (Views: 45.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/restaurants-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-19 15:23:27 +0000
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for 127.0.0.1 at 2015-02-19 15:23:27 +0000
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-02-19 15:23:27 +0000
+
+
+Started GET "/assets/reviews-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-19 15:23:27 +0000
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-02-19 15:23:27 +0000
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for 127.0.0.1 at 2015-02-19 15:23:27 +0000
+
+
+Started GET "/assets/restaurants-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-19 15:23:27 +0000
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-19 15:23:27 +0000
+
+
+Started GET "/assets/application-322efd85de1e19784a5dc35312bc9882.js?body=1" for 127.0.0.1 at 2015-02-19 15:23:27 +0000
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2015-02-19 15:23:29 +0000
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2015-02-19 15:23:29 +0000
+
+
+Started GET "/users/auth/facebook/callback?code=AQDaZ6aH-P-mobEidNeRHewtQ59BLNyk7SDNT8D5EKqr9SPi7cv2pn7D2Kyi0f9ZyEB2dwbiselPlxZN8JOhBEvbrokaMc4vPkCQ3gJ5jOfq_L0iSZzD2URpiVBXHbvvfTyLhDE2yEzGM-AFQELK16g77cTewEGFpM1MGRfmVBySdxcK1jC9CJQaQrZVLUDAv7v9uuDek_v-3HRdc2I77Fpg6daQqZmgOcLYhU4h5Ufxg7mhAg5BFsONzMpDEPEMQnMP1qD_xGOpBq3lCy4iY_a3GejwzV2gIAU4FGmZw2kbpyyszzeoZep4cuCcpoKsoOA&state=9dab737e3f46028b5cf4a2c79fa089ecfc462693095ded0b" for 127.0.0.1 at 2015-02-19 15:23:30 +0000
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQDaZ6aH-P-mobEidNeRHewtQ59BLNyk7SDNT8D5EKqr9SPi7cv2pn7D2Kyi0f9ZyEB2dwbiselPlxZN8JOhBEvbrokaMc4vPkCQ3gJ5jOfq_L0iSZzD2URpiVBXHbvvfTyLhDE2yEzGM-AFQELK16g77cTewEGFpM1MGRfmVBySdxcK1jC9CJQaQrZVLUDAv7v9uuDek_v-3HRdc2I77Fpg6daQqZmgOcLYhU4h5Ufxg7mhAg5BFsONzMpDEPEMQnMP1qD_xGOpBq3lCy4iY_a3GejwzV2gIAU4FGmZw2kbpyyszzeoZep4cuCcpoKsoOA", "state"=>"9dab737e3f46028b5cf4a2c79fa089ecfc462693095ded0b"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2  ORDER BY "users"."id" ASC LIMIT 1  [["provider", "facebook"], ["uid", "10153146434361789"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5  [["last_sign_in_at", "2015-02-19 15:20:20.253578"], ["current_sign_in_at", "2015-02-19 15:23:30.400649"], ["sign_in_count", 10], ["updated_at", "2015-02-19 15:23:30.401854"], ["id", 1]]
+  [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-19 15:23:30 +0000
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  [1m[36mRestaurant Load (0.1ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 1]]
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 2]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 3]]
+  Rendered restaurants/index.html.haml within layouts/application (5.3ms)
+Completed 200 OK in 58ms (Views: 56.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/restaurants-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-19 15:23:30 +0000
+
+
+Started GET "/assets/reviews-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-19 15:23:30 +0000
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-02-19 15:23:30 +0000
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for 127.0.0.1 at 2015-02-19 15:23:30 +0000
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for 127.0.0.1 at 2015-02-19 15:23:30 +0000
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-02-19 15:23:30 +0000
+
+
+Started GET "/assets/restaurants-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-19 15:23:30 +0000
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-19 15:23:30 +0000
+
+
+Started GET "/assets/application-322efd85de1e19784a5dc35312bc9882.js?body=1" for 127.0.0.1 at 2015-02-19 15:23:30 +0000
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2015-02-19 15:23:43 +0000
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"g+KL3g9YxRoL/ztyIPmFzTaUccKOejSKF79L3K+m45lLCWVR3w+1PV8SXEDl1+opOZ7CeztooE1LNkx6o7fWKg=="}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-19 15:23:43 +0000
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  [1m[36mRestaurant Load (0.1ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 1]]
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 1]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 2]]
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 3]]
+  Rendered restaurants/index.html.haml within layouts/application (4.9ms)
+Completed 200 OK in 51ms (Views: 49.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/restaurants-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-19 15:23:43 +0000
+
+
+Started GET "/assets/reviews-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-19 15:23:43 +0000
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-02-19 15:23:43 +0000
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for 127.0.0.1 at 2015-02-19 15:23:43 +0000
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-02-19 15:23:43 +0000
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for 127.0.0.1 at 2015-02-19 15:23:43 +0000
+
+
+Started GET "/assets/restaurants-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-19 15:23:43 +0000
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-19 15:23:43 +0000
+
+
+Started GET "/assets/application-322efd85de1e19784a5dc35312bc9882.js?body=1" for 127.0.0.1 at 2015-02-19 15:23:43 +0000
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2015-02-19 15:24:16 +0000
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2015-02-19 15:24:16 +0000
+
+
+Started GET "/users/auth/facebook/callback?code=AQCAtPTJ_smfw0YuHPEpTjJy0gYJOEIJ09SeBKnJUu2yey_JAOhwUOOMfEt-Y82S1MilC93axvPFKGm5KHFpvJ3mAsEeaP34iUr1zJRNYw2DabG2iH8HEHY_M2EgoQjkvelNhYzJIYCna3PQgmjz6wQxguBU2aABKo902PyCNqfg9k-cQlPIEnMQDcZQDztHC1eadERmMtnx8J4lhNXKg1ST2_OEPxMIFDLifv0LFBHtIdWillre5mjD3mJVoKV2lAHWkdPNosPTV3HZyQhV2kMxCvQPVjeAkhAqvBc6zyXY4g3gkVxcYPbXUS2JU_83NbE&state=b96b0b865e393e55649596bce6e10b36d7ccd9ae41ca8964" for 127.0.0.1 at 2015-02-19 15:24:17 +0000
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQCAtPTJ_smfw0YuHPEpTjJy0gYJOEIJ09SeBKnJUu2yey_JAOhwUOOMfEt-Y82S1MilC93axvPFKGm5KHFpvJ3mAsEeaP34iUr1zJRNYw2DabG2iH8HEHY_M2EgoQjkvelNhYzJIYCna3PQgmjz6wQxguBU2aABKo902PyCNqfg9k-cQlPIEnMQDcZQDztHC1eadERmMtnx8J4lhNXKg1ST2_OEPxMIFDLifv0LFBHtIdWillre5mjD3mJVoKV2lAHWkdPNosPTV3HZyQhV2kMxCvQPVjeAkhAqvBc6zyXY4g3gkVxcYPbXUS2JU_83NbE", "state"=>"b96b0b865e393e55649596bce6e10b36d7ccd9ae41ca8964"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2  ORDER BY "users"."id" ASC LIMIT 1  [["provider", "facebook"], ["uid", "10153146434361789"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "users" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5  [["last_sign_in_at", "2015-02-19 15:23:30.400649"], ["current_sign_in_at", "2015-02-19 15:24:17.324382"], ["sign_in_count", 11], ["updated_at", "2015-02-19 15:24:17.325785"], ["id", 1]]
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-19 15:24:17 +0000
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  [1m[36mRestaurant Load (0.1ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 1]]
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 2]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 3]]
+  Rendered restaurants/index.html.haml within layouts/application (5.2ms)
+Completed 200 OK in 57ms (Views: 55.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/restaurants-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-19 15:24:17 +0000
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for 127.0.0.1 at 2015-02-19 15:24:17 +0000
+
+
+Started GET "/assets/reviews-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-19 15:24:17 +0000
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-02-19 15:24:17 +0000
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-02-19 15:24:17 +0000
+
+
+Started GET "/assets/restaurants-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-19 15:24:17 +0000
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for 127.0.0.1 at 2015-02-19 15:24:17 +0000
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-19 15:24:17 +0000
+
+
+Started GET "/assets/application-322efd85de1e19784a5dc35312bc9882.js?body=1" for 127.0.0.1 at 2015-02-19 15:24:17 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-19 15:24:29 +0000
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[35mRestaurant Load (0.1ms)[0m  SELECT "restaurants".* FROM "restaurants"
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 1]]
+  [1m[35mReview Load (0.1ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1  [["restaurant_id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 2]]
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 3]]
+  Rendered restaurants/index.html.haml within layouts/application (7.4ms)
+Completed 200 OK in 49ms (Views: 47.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/restaurants-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-19 15:24:29 +0000
+
+
+Started GET "/assets/reviews-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-19 15:24:29 +0000
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-02-19 15:24:29 +0000
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for 127.0.0.1 at 2015-02-19 15:24:29 +0000
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-02-19 15:24:29 +0000
+
+
+Started GET "/assets/restaurants-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-19 15:24:29 +0000
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for 127.0.0.1 at 2015-02-19 15:24:29 +0000
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-19 15:24:29 +0000
+
+
+Started GET "/assets/application-322efd85de1e19784a5dc35312bc9882.js?body=1" for 127.0.0.1 at 2015-02-19 15:24:29 +0000
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2015-02-19 15:25:01 +0000
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"vGrVfDhTLTCPzkEKZTBRqXVWdPejkktyaOvjqGN17SZUW5KEpj5GsUD5h4nTyzizMHCS0VVSkp6lBRKrt2CfBQ=="}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-19 15:25:01 +0000
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[35mRestaurant Load (0.1ms)[0m  SELECT "restaurants".* FROM "restaurants"
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 1]]
+  [1m[35mReview Load (0.1ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1  [["restaurant_id", 1]]
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 2]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 3]]
+  Rendered restaurants/index.html.haml within layouts/application (5.1ms)
+Completed 200 OK in 53ms (Views: 51.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/restaurants-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-19 15:25:01 +0000
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for 127.0.0.1 at 2015-02-19 15:25:01 +0000
+
+
+Started GET "/assets/reviews-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-19 15:25:01 +0000
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for 127.0.0.1 at 2015-02-19 15:25:01 +0000
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-02-19 15:25:01 +0000
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-02-19 15:25:01 +0000
+
+
+Started GET "/assets/restaurants-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-19 15:25:01 +0000
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-19 15:25:01 +0000
+
+
+Started GET "/assets/application-322efd85de1e19784a5dc35312bc9882.js?body=1" for 127.0.0.1 at 2015-02-19 15:25:01 +0000
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-02-19 15:25:01 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (6.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 67ms (Views: 65.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2015-02-19 15:25:03 +0000
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (3.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 49ms (Views: 48.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2015-02-19 15:25:15 +0000
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0Lf6OeTfQvay1OuUqW2hYTs1NarfRMWUkB2/g5z9j/jHGhGDcNBzVT6Y7blg2DkzEWFjLatS0fqkIzm6W29qgA==", "user"=>{"email"=>"test@test.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'test@test.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "test@test.com"], ["encrypted_password", "$2a$10$XpIxsmfg/2a/J07poVtEXevlXlceDvFYAgeDQmLgVBwMdr8Ll9z/S"], ["created_at", "2015-02-19 15:25:15.771631"], ["updated_at", "2015-02-19 15:25:15.771631"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "users" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "last_sign_in_ip" = $3, "current_sign_in_ip" = $4, "sign_in_count" = $5, "updated_at" = $6 WHERE "users"."id" = $7  [["last_sign_in_at", "2015-02-19 15:25:15.774356"], ["current_sign_in_at", "2015-02-19 15:25:15.774356"], ["last_sign_in_ip", "127.0.0.1/32"], ["current_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1], ["updated_at", "2015-02-19 15:25:15.775197"], ["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 77ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-19 15:25:15 +0000
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  [1m[36mRestaurant Load (0.1ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 1]]
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 2]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 3]]
+  Rendered restaurants/index.html.haml within layouts/application (5.8ms)
+Completed 200 OK in 50ms (Views: 48.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/reviews-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-19 15:25:15 +0000
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for 127.0.0.1 at 2015-02-19 15:25:15 +0000
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-02-19 15:25:15 +0000
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for 127.0.0.1 at 2015-02-19 15:25:15 +0000
+
+
+Started GET "/assets/restaurants-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-02-19 15:25:15 +0000
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-02-19 15:25:15 +0000
+
+
+Started GET "/assets/restaurants-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-19 15:25:15 +0000
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-02-19 15:25:15 +0000
+
+
+Started GET "/assets/application-322efd85de1e19784a5dc35312bc9882.js?body=1" for 127.0.0.1 at 2015-02-19 15:25:15 +0000
+
+
+Started GET "/restaurants/1/edit" for 127.0.0.1 at 2015-02-19 15:25:23 +0000
+Processing by RestaurantsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered restaurants/edit.html.haml within layouts/application (1.1ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+Completed 200 OK in 42ms (Views: 40.4ms | ActiveRecord: 0.4ms)
